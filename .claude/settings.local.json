@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(mdfind:*)",
+      "Bash(export NVM_DIR=\"$HOME/.nvm\")",
+      "Bash([ -s \"$NVM_DIR/nvm.sh\" ])",
+      "Bash(. \"$NVM_DIR/nvm.sh\")",
+      "Bash(export PATH=\"/opt/homebrew/bin:/usr/local/bin:$HOME/.volta/bin:$PATH\")",
+      "Bash(curl:*)",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "Bash(python3:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
