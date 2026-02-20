@@ -73,7 +73,6 @@ const serviceTypes = {
   contractor: [
     "Complex climb support",
     "Overflow / capacity",
-    "Technical rigging",
     "Cabling & bracing",
     "Municipal contract work",
     "Ongoing partnership",
@@ -213,7 +212,7 @@ export default function QuoteForm() {
             <div className="h-px w-12 bg-ember-400" />
           </div>
 
-          <h2 className="text-3xl lg:text-5xl font-semibold text-white leading-tight tracking-tight text-balance">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white leading-tight tracking-tight text-balance">
             Your trees deserve expert care.
             <br />
             <span className="text-ember-400">Tell Jordan what you need.</span>

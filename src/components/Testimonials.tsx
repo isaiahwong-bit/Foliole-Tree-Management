@@ -20,7 +20,7 @@ const testimonials = [
   },
   {
     quote:
-      "We sub-contract Jordan for our most complex climbs and technical removals. His safety standards match ours, his documentation is thorough, and he shows up when he says he will. That\u2019s rare in this industry.",
+      "We sub-contract Jordan for our most complex climbs and removals. He\u2019s precise, reliable, and completely professional. His safety standards match ours and his documentation is thorough. That\u2019s rare in this industry.",
     author: "David R.",
     role: "Director, Regional Tree Services",
     stars: 5,
@@ -37,7 +37,7 @@ const testimonials = [
 const stats = [
   { value: "500+", label: "Trees Managed" },
   { value: "100%", label: "Safety Record" },
-  { value: "15+", label: "Years Experience" },
+  { value: "AQF", label: "Certified Arborist" },
 ];
 
 export default function Testimonials() {
@@ -81,7 +81,7 @@ export default function Testimonials() {
             </span>
             <div className="h-px w-12 bg-ember-400" />
           </div>
-          <h2 className="text-3xl lg:text-5xl font-semibold text-white leading-tight tracking-tight text-balance">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white leading-tight tracking-tight text-balance">
             Trusted by property owners
             <br className="hidden sm:block" />
             and industry professionals

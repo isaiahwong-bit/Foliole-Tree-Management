@@ -8,26 +8,26 @@ import {
   slideInRight,
   viewportConfig,
 } from "@/lib/animations";
-import { AlertTriangle, TrendingDown, ShieldX } from "lucide-react";
+import { Award, ShieldCheck, Sparkles } from "lucide-react";
 
-const painPoints = [
+const pillars = [
   {
-    icon: AlertTriangle,
-    title: "Reckless cutting destroys value",
+    icon: Award,
+    title: "Qualified Experience",
     description:
-      "Improper pruning and topping cause irreversible structural damage, leaving trees weakened, disease-prone, and aesthetically ruined. Butchered crowns and jagged stumps where a canopy used to be.",
+      "Trade-qualified with real experience across Melbourne and Victoria. Jordan has worked on everything from suburban backyards to large-scale municipal projects — the kind of breadth that only comes from doing the hard yards.",
   },
   {
-    icon: TrendingDown,
-    title: "Neglect compounds quietly",
+    icon: ShieldCheck,
+    title: "Operational Safety",
     description:
-      "Hidden decay, root stress, and pest infestations don\u2019t announce themselves until a limb drops on your roof or a mature tree collapses entirely. By then, the cost has multiplied tenfold.",
+      "A disciplined, systematic approach to high-risk work. Every climb is planned. Every cut is considered. Proper rigging, correct PPE, and clear communication on every site — because there are no shortcuts when you\u2019re working at height.",
   },
   {
-    icon: ShieldX,
-    title: "Safety shortcuts create liability",
+    icon: Sparkles,
+    title: "Property Respect",
     description:
-      "Unqualified operators cutting corners with outdated gear and no plan. One wrong cut near a power line, one unsecured branch over a walkway\u2014the consequences fall on your property.",
+      "Your property is left better than we found it. Clean sites, protected gardens, no damage to structures or surrounding landscape. The work finishes when the last branch is chipped and the last boot print is swept.",
   },
 ];
 
@@ -48,20 +48,24 @@ export default function Problem() {
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-12 bg-ember-400" />
               <span className="text-ember-500 text-sm font-medium tracking-[0.2em] uppercase">
-                The problem
+                Our Standard
               </span>
             </div>
-            <h2 className="text-3xl lg:text-5xl font-semibold text-forest-950 leading-tight tracking-tight text-balance">
-              Most &ldquo;tree services&rdquo; do more harm than good
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-forest-950 leading-tight tracking-tight text-balance">
+              A professional standard
+              <br />
+              in the canopy
             </h2>
             <p className="mt-6 text-lg text-forest-800/70 leading-relaxed">
-              The industry is riddled with operators who confuse chainsaws with
-              expertise. Your trees\u2014and the significant investment they
-              represent\u2014deserve more than guesswork and brute force.
+              Jordan doesn&apos;t just climb trees — he manages them. With
+              hands-on trade experience across Melbourne and greater Victoria,
+              Foliole brings the reliability, skill, and professionalism of a
+              qualified tradesman to every job. No guesswork. No cowboys. Just
+              consistent, high-quality work you can stand behind.
             </p>
           </motion.div>
 
-          {/* Right: pain point cards */}
+          {/* Right: pillar cards */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -69,7 +73,7 @@ export default function Problem() {
             viewport={viewportConfig}
             className="space-y-6"
           >
-            {painPoints.map((point, i) => (
+            {pillars.map((pillar, i) => (
               <motion.div
                 key={i}
                 variants={slideInRight}
@@ -80,16 +84,16 @@ export default function Problem() {
 
                 <div className="pl-4">
                   <div className="flex items-center gap-3 mb-3">
-                    <point.icon
+                    <pillar.icon
                       size={20}
                       className="text-ember-500 flex-shrink-0"
                     />
                     <h3 className="text-lg font-semibold text-forest-950">
-                      {point.title}
+                      {pillar.title}
                     </h3>
                   </div>
                   <p className="text-forest-800/65 leading-relaxed">
-                    {point.description}
+                    {pillar.description}
                   </p>
                 </div>
               </motion.div>
@@ -106,8 +110,8 @@ export default function Problem() {
           className="mt-20 lg:mt-28 text-center"
         >
           <p className="text-xl lg:text-2xl text-forest-800/80 font-medium max-w-2xl mx-auto leading-relaxed">
-            There is a better standard. It starts with understanding that every
-            tree is a living system\u2014and treating it accordingly.
+            This is what professional arboriculture looks like — qualified,
+            insured, and built on a reputation that&apos;s earned one tree at a time.
           </p>
         </motion.div>
       </div>

@@ -47,17 +47,17 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-24 pb-32 lg:py-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full pt-32 pb-28 sm:pt-36 sm:pb-32 lg:pt-40 lg:pb-32">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex items-center gap-3 mb-8"
+            className="flex items-center gap-3 mb-6 sm:mb-8"
           >
-            <div className="h-px w-12 bg-ember-400" />
-            <span className="text-ember-400 text-sm font-medium tracking-[0.2em] uppercase">
-              Expert Arboriculture
+            <div className="h-px w-8 sm:w-12 bg-ember-400" />
+            <span className="text-ember-400 text-xs sm:text-sm font-medium tracking-[0.2em] uppercase">
+              Professional Arboriculture
             </span>
           </motion.div>
 
@@ -65,33 +65,33 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-semibold text-white leading-[1.08] tracking-tight text-balance"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold text-white leading-[1.1] sm:leading-[1.08] tracking-tight"
           >
-            Elevating arboriculture
+            Expert tree care,
             <br />
-            <span className="text-ember-400">from root to crown</span>
+            <span className="text-ember-400">done properly</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="mt-8 text-lg lg:text-xl text-white/70 leading-relaxed max-w-xl"
+            className="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl text-white/70 leading-relaxed max-w-xl"
           >
-            Science-based tree care that protects your investment and enhances
-            your landscape. Precision pruning, health diagnostics, and safe
-            removals by a certified arborist.
+            Qualified arborist serving Melbourne and greater Victoria.
+            Hands-on tree care backed by trade experience, proper safety
+            standards, and genuine knowledge of tree health.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-10 flex flex-col sm:flex-row gap-4"
+            className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
             <a
               href="#contact"
-              className="group inline-flex items-center justify-center gap-2 bg-ember-500 text-white px-8 py-4 rounded-full font-semibold text-base hover:bg-ember-400 transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2 bg-ember-500 text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-sm sm:text-base hover:bg-ember-400 transition-all duration-300"
             >
               Get a Free Quote
               <ArrowRight
@@ -101,7 +101,7 @@ export default function Hero() {
             </a>
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-full font-medium text-base hover:bg-white/10 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:bg-white/10 transition-all duration-300"
             >
               Our Services
             </a>
@@ -112,19 +112,23 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.1 }}
-            className="mt-16 flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/50"
+            className="mt-10 sm:mt-16 grid grid-cols-2 sm:flex sm:flex-wrap gap-x-6 sm:gap-x-8 gap-y-2.5 sm:gap-y-3 text-xs sm:text-sm text-white/50"
           >
             <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-ember-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0" />
+              Melbourne Based
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0" />
               Certified Arborist
             </span>
             <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-ember-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0" />
               Fully Insured
             </span>
             <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-ember-400" />
-              Science-Based Methods
+              <span className="w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0" />
+              Public Liability Insured
             </span>
           </motion.div>
         </div>

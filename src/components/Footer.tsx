@@ -6,10 +6,11 @@ import { Leaf } from "lucide-react";
 
 const footerLinks = {
   services: [
-    { label: "Precision Pruning", href: "#services" },
-    { label: "Health Assessments", href: "#services" },
-    { label: "Safe Removals & Cabling", href: "#services" },
-    { label: "Sub-contracting", href: "#services" },
+    { label: "Pruning", href: "#services" },
+    { label: "Tree Health & Diagnostics", href: "#services" },
+    { label: "Structural Support", href: "#services" },
+    { label: "Tree Removals", href: "#services" },
+    { label: "Subcontracting & Partnership", href: "#services" },
   ],
   company: [
     { label: "About Jordan", href: "#about" },
@@ -39,9 +40,9 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-sm">
-              Expert tree care by Jordan. Specializing in precision pruning,
-              health assessments, and safe removals. Elevating arboriculture
-              from root to crown.
+              Melbourne-based professional arboriculture by Jordan. Qualified
+              tree care, risk assessment, and subcontracting across Melbourne
+              and greater Victoria.
             </p>
           </div>
 

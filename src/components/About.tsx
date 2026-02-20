@@ -8,19 +8,24 @@ import {
   staggerContainer,
   viewportConfig,
 } from "@/lib/animations";
+import { Award, BookOpen, Leaf, ShieldCheck, Zap } from "lucide-react";
 import Image from "next/image";
-import { Award, BookOpen, Leaf, ShieldCheck } from "lucide-react";
 
 const credentials = [
   {
     icon: Award,
     title: "Certified Arborist",
-    detail: "ISA-qualified with years of hands-on climbing and diagnostic experience",
+    detail: "AQF-certified with hands-on climbing and diagnostic experience across Melbourne and greater Victoria",
   },
   {
     icon: BookOpen,
-    title: "Science-Based Practice",
-    detail: "Every decision grounded in arboricultural research, not habit or guesswork",
+    title: "Trade Qualified",
+    detail: "Years of local experience and AQF certification in arboriculture",
+  },
+  {
+    icon: Zap,
+    title: "Technical Rigour",
+    detail: "Decay detection, risk assessment, and structural analysis inform every intervention",
   },
   {
     icon: Leaf,
@@ -30,7 +35,7 @@ const credentials = [
   {
     icon: ShieldCheck,
     title: "Fully Insured",
-    detail: "Comprehensive public liability and professional indemnity coverage",
+    detail: "Comprehensive public liability coverage for total peace of mind",
   },
 ];
 
@@ -39,7 +44,7 @@ export default function About() {
     <section id="about" className="py-24 lg:py-36 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left: Jordan's image */}
+          {/* Left: Jordan's real photo */}
           <motion.div
             variants={slideInLeft}
             initial="hidden"
@@ -49,10 +54,10 @@ export default function About() {
           >
             <div className="aspect-[4/5] rounded-2xl relative overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1657730391002-bf55ff069a80?w=800&q=80"
-                alt="Jordan climbing and working in a tree canopy with professional arborist equipment"
+                src="/jordan-climbing.jpeg"
+                alt="Jordan climbing a massive tree in full safety harness and hi-vis gear"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-950/40 to-transparent" />
@@ -66,13 +71,13 @@ export default function About() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute -right-4 bottom-12 bg-white rounded-xl p-5 shadow-xl border-l-4 border-ember-400"
+              className="absolute right-2 sm:-right-4 bottom-8 sm:bottom-12 bg-white rounded-xl p-4 sm:p-5 shadow-xl border-l-4 border-ember-400"
             >
-              <p className="text-2xl font-bold text-forest-900">15+</p>
+              <p className="text-2xl font-bold text-forest-900">500+</p>
               <p className="text-xs text-forest-700/70 mt-0.5">
-                Years in
+                Trees
                 <br />
-                arboriculture
+                managed
               </p>
             </motion.div>
 
@@ -94,26 +99,26 @@ export default function About() {
               </span>
             </div>
 
-            <h2 className="text-3xl lg:text-5xl font-semibold text-forest-950 leading-tight tracking-tight text-balance">
-              The arborist behind
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-forest-950 leading-tight tracking-tight text-balance">
+              The arborist
               <br />
-              every project
+              behind every project
             </h2>
 
             <p className="mt-6 text-lg text-forest-800/70 leading-relaxed">
-              When you hire Foliole, you&apos;re hiring Jordan. Not a sales team,
-              not a call centre, not a rotating roster of subcontractors you&apos;ve
-              never met. Jordan is the one who assesses your trees, plans the work,
-              climbs the canopy, and ensures every cut is deliberate and every site
-              is left immaculate.
+              When you hire Foliole, you&apos;re hiring Jordan — not a sales team,
+              not a call centre, not a rotating roster. With years of
+              professional arboriculture experience across Melbourne and greater
+              Victoria, Jordan is the one who assesses your trees, plans the
+              work, and executes at height with the care of a qualified
+              tradesman.
             </p>
             <p className="mt-4 text-forest-800/65 leading-relaxed">
-              With over fifteen years of hands-on experience in arboriculture,
-              Jordan brings the rare combination of certified expertise and
-              genuine craftsmanship. Whether sub-contracting complex climbs for
-              established firms or working directly with property owners who want
-              it done right, the standard never changes: rigorous assessment,
-              transparent communication, flawless execution.
+              Professional arboriculture — where disciplined safety protocols
+              meet genuine trade knowledge and hands-on experience. Every climb is methodical. Every cut is
+              deliberate. Every site is left immaculate. Whether sub-contracting
+              complex operations for established firms or working directly with
+              property owners, the standard never changes.
             </p>
 
             {/* Credentials */}
