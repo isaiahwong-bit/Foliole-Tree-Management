@@ -15,13 +15,13 @@ const pillars = [
     icon: Award,
     title: "Qualified Experience",
     description:
-      "Trade-qualified with real experience across Melbourne and Victoria. Jordan has worked on everything from suburban backyards to large-scale municipal projects — the kind of breadth that only comes from doing the hard yards.",
+      "Trade-qualified with real experience across Melbourne and Victoria. Jordan has worked on everything from suburban backyards to large-scale municipal projects. That kind of breadth only comes from doing the hard yards.",
   },
   {
     icon: ShieldCheck,
     title: "Operational Safety",
     description:
-      "A disciplined, systematic approach to high-risk work. Every climb is planned. Every cut is considered. Proper rigging, correct PPE, and clear communication on every site — because there are no shortcuts when you\u2019re working at height.",
+      "A disciplined, systematic approach to high-risk work. Every climb is planned. Every cut is considered. Proper rigging, correct PPE, and clear communication on every site. There are no shortcuts when you\u2019re working at height.",
   },
   {
     icon: Sparkles,
@@ -57,11 +57,11 @@ export default function Problem() {
               in the canopy
             </h2>
             <p className="mt-6 text-lg text-forest-800/70 leading-relaxed">
-              Jordan doesn&apos;t just climb trees — he manages them. With
+              Jordan doesn&apos;t just climb trees. He manages them. With
               hands-on trade experience across Melbourne and greater Victoria,
               Foliole brings the reliability, skill, and professionalism of a
               qualified tradesman to every job. No guesswork. No cowboys. Just
-              consistent, high-quality work you can stand behind.
+              consistent, quality work you can stand behind.
             </p>
           </motion.div>
 
@@ -110,8 +110,8 @@ export default function Problem() {
           className="mt-20 lg:mt-28 text-center"
         >
           <p className="text-xl lg:text-2xl text-forest-800/80 font-medium max-w-2xl mx-auto leading-relaxed">
-            This is what professional arboriculture looks like — qualified,
-            insured, and built on a reputation that&apos;s earned one tree at a time.
+            Qualified, insured, and built on a reputation
+            that&apos;s earned one tree at a time.
           </p>
         </motion.div>
       </div>

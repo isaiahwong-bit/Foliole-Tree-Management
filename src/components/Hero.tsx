@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Background Image — looking up into massive tree canopy */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1759941691570-c2aa2e109ccf?w=1920&q=80"
+          src="/hero-canopy.jpg"
           alt="Looking up through a towering tree canopy with sunlight filtering through the leaves"
           fill
           className="object-cover"
@@ -24,7 +24,7 @@ export default function Hero() {
       </div>
 
       {/* Diagonal geometric accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.04]">
+      <div aria-hidden="true" className="absolute top-0 right-0 w-1/2 h-full opacity-[0.04]">
         <div
           className="absolute inset-0"
           style={{
@@ -36,11 +36,13 @@ export default function Hero() {
 
       {/* Floating geometric shapes */}
       <motion.div
+        aria-hidden="true"
         animate={{ y: [-10, 10, -10], rotate: [0, 3, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-1/4 right-[15%] w-32 h-32 border border-ember-400/20 rounded-full hidden lg:block"
       />
       <motion.div
+        aria-hidden="true"
         animate={{ y: [10, -10, 10] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-1/3 right-[30%] w-16 h-16 border border-ember-400/15 rotate-45 hidden lg:block"
@@ -67,7 +69,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold text-white leading-[1.1] sm:leading-[1.08] tracking-tight"
           >
-            Expert tree care,
+            Tree care,
             <br />
             <span className="text-ember-400">done properly</span>
           </motion.h1>
@@ -78,9 +80,10 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl text-white/70 leading-relaxed max-w-xl"
           >
-            Qualified arborist serving Melbourne and greater Victoria.
-            Hands-on tree care backed by trade experience, proper safety
-            standards, and genuine knowledge of tree health.
+            Lumberjord is a climbing arborist servicing Melbourne and greater
+            Victoria with a hands-on approach to arboriculture. Focusing on
+            best tree health, best practice end-to-end services, and
+            innovation.
           </motion.p>
 
           <motion.div
@@ -120,15 +123,7 @@ export default function Hero() {
             </span>
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0" />
-              Certified Arborist
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0" />
               Fully Insured
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0" />
-              Public Liability Insured
             </span>
           </motion.div>
         </div>

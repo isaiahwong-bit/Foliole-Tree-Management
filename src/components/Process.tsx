@@ -21,7 +21,7 @@ const steps = [
     step: "02",
     title: "Site Assessment",
     description:
-      "Jordan inspects every tree in scope. Species, condition, structural risks\u2014all documented in a clear, written report with recommendations.",
+      "Jordan inspects every tree in scope. Species, condition, and structural risks are all documented in a clear, written report with recommendations.",
   },
   {
     icon: Hammer,
@@ -58,7 +58,7 @@ export default function Process() {
             </span>
             <div className="h-px w-12 bg-ember-300" />
           </div>
-          <h2 className="text-3xl lg:text-5xl font-semibold text-forest-950 leading-tight tracking-tight text-balance">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-forest-950 leading-tight tracking-tight text-balance">
             A clear, methodical process
             <br className="hidden sm:block" />
             from enquiry to completion
@@ -73,8 +73,8 @@ export default function Process() {
           viewport={viewportConfig}
           className="relative"
         >
-          {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-24 left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] h-px bg-forest-200" />
+          {/* Connecting line (desktop) — spans between first and last step circle centers */}
+          <div className="hidden lg:block absolute top-[48px] left-[12.5%] right-[12.5%] h-px bg-forest-200" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {steps.map((item, i) => (

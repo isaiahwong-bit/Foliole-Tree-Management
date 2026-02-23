@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, type FormEvent, type ChangeEvent } from "react";
+import { useState, useRef, useEffect, useMemo, type FormEvent, type ChangeEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, viewportConfig } from "@/lib/animations";
 import {
@@ -40,7 +40,7 @@ const urgencyOptions: { value: Urgency; label: string; description: string }[] =
     {
       value: "flexible",
       label: "Flexible",
-      description: "No rush — schedule at convenience",
+      description: "No rush, schedule at convenience",
     },
     {
       value: "within-month",
@@ -99,6 +99,18 @@ export default function QuoteForm() {
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Create stable object URLs for image previews and revoke on cleanup
+  const imageUrls = useMemo(
+    () => formData.images.map((file) => URL.createObjectURL(file)),
+    [formData.images]
+  );
+
+  useEffect(() => {
+    return () => {
+      imageUrls.forEach((url) => URL.revokeObjectURL(url));
+    };
+  }, [imageUrls]);
 
   const updateField = <K extends keyof FormData>(
     key: K,
@@ -248,7 +260,7 @@ export default function QuoteForm() {
                 </h3>
                 <p className="text-white/60 leading-relaxed max-w-md mx-auto">
                   Thanks for reaching out. Jordan will review your details and
-                  get back to you shortly &mdash; usually within 24 hours.
+                  get back to you shortly, usually within 24 hours.
                 </p>
                 <button
                   onClick={() => {
@@ -319,11 +331,12 @@ export default function QuoteForm() {
                 {/* Name & Email row */}
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
+                    <label htmlFor="quote-name" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
                       <User size={14} className="text-ember-400" />
                       Name *
                     </label>
                     <input
+                      id="quote-name"
                       type="text"
                       required
                       value={formData.name}
@@ -333,36 +346,38 @@ export default function QuoteForm() {
                           ? "Company / contact name"
                           : "Your name"
                       }
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 transition-all text-sm"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 invalid:border-red-500/50 transition-all text-sm"
                     />
                   </div>
                   <div>
-                    <label className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
+                    <label htmlFor="quote-email" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
                       <Mail size={14} className="text-ember-400" />
                       Email *
                     </label>
                     <input
+                      id="quote-email"
                       type="email"
                       required
                       value={formData.email}
                       onChange={(e) => updateField("email", e.target.value)}
                       placeholder="your@email.com"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 transition-all text-sm"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 invalid:border-red-500/50 transition-all text-sm"
                     />
                   </div>
                 </div>
 
                 {/* Phone */}
                 <div>
-                  <label className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
+                  <label htmlFor="quote-phone" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
                     <Phone size={14} className="text-ember-400" />
                     Phone
                   </label>
                   <input
+                    id="quote-phone"
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => updateField("phone", e.target.value)}
-                    placeholder="Optional — but useful for quick follow-up"
+                    placeholder="Optional, but useful for quick follow-up"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 transition-all text-sm"
                   />
                 </div>
@@ -370,29 +385,31 @@ export default function QuoteForm() {
                 {/* Location & Number of Trees */}
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
+                    <label htmlFor="quote-location" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
                       <MapPin size={14} className="text-ember-400" />
                       Location *
                     </label>
                     <input
+                      id="quote-location"
                       type="text"
                       required
                       value={formData.location}
                       onChange={(e) => updateField("location", e.target.value)}
                       placeholder="Suburb or address"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 transition-all text-sm"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 invalid:border-red-500/50 transition-all text-sm"
                     />
                   </div>
                   <div>
-                    <label className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
+                    <label htmlFor="quote-tree-count" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
                       <TreePine size={14} className="text-ember-400" />
                       Number of trees *
                     </label>
                     <select
+                      id="quote-tree-count"
                       required
                       value={formData.treeCount}
                       onChange={(e) => updateField("treeCount", e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 transition-all text-sm appearance-none cursor-pointer"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 invalid:border-red-500/50 transition-all text-sm appearance-none cursor-pointer"
                     >
                       <option value="" disabled className="bg-forest-900">
                         Select
@@ -421,17 +438,18 @@ export default function QuoteForm() {
 
                 {/* Service type */}
                 <div>
-                  <label className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
+                  <label htmlFor="quote-service" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
                     <Wrench size={14} className="text-ember-400" />
                     What work are you looking for? *
                   </label>
                   <select
+                    id="quote-service"
                     required
                     value={formData.serviceType}
                     onChange={(e) =>
                       updateField("serviceType", e.target.value)
                     }
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 transition-all text-sm appearance-none cursor-pointer"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 invalid:border-red-500/50 transition-all text-sm appearance-none cursor-pointer"
                   >
                     <option value="" disabled className="bg-forest-900">
                       Select a service
@@ -450,15 +468,17 @@ export default function QuoteForm() {
 
                 {/* Urgency */}
                 <div>
-                  <label className="text-white/80 text-sm font-medium mb-3 flex items-center gap-2">
+                  <span className="text-white/80 text-sm font-medium mb-3 flex items-center gap-2">
                     <Clock size={14} className="text-ember-400" />
                     Urgency
-                  </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  </span>
+                  <div role="radiogroup" aria-label="Urgency" className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                     {urgencyOptions.map((option) => (
                       <button
                         key={option.value}
                         type="button"
+                        role="radio"
+                        aria-checked={formData.urgency === option.value}
                         onClick={() => updateField("urgency", option.value)}
                         className={`py-3 px-3 rounded-xl text-center transition-all duration-200 border ${
                           formData.urgency === option.value
@@ -479,11 +499,12 @@ export default function QuoteForm() {
 
                 {/* Description */}
                 <div>
-                  <label className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
+                  <label htmlFor="quote-description" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
                     <MessageSquare size={14} className="text-ember-400" />
                     Tell us more
                   </label>
                   <textarea
+                    id="quote-description"
                     value={formData.description}
                     onChange={(e) =>
                       updateField("description", e.target.value)
@@ -553,7 +574,7 @@ export default function QuoteForm() {
                           >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                              src={URL.createObjectURL(file)}
+                              src={imageUrls[i]}
                               alt={`Upload ${i + 1}`}
                               className="w-full h-full object-cover"
                             />

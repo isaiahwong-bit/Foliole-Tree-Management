@@ -13,7 +13,7 @@ import { Star, Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Jordan transformed our estate\u2019s tree line. He identified a structural issue in our mature oak that two previous companies missed entirely. Methodical, knowledgeable, and a pleasure to work with.",
+      "Jordan transformed our estate\u2019s tree line. He identified a structural issue in our mature oak that two previous companies missed entirely. Really knowledgeable and a pleasure to work with.",
     author: "Catherine M.",
     role: "Estate Manager",
     stars: 5,
@@ -37,7 +37,7 @@ const testimonials = [
 const stats = [
   { value: "500+", label: "Trees Managed" },
   { value: "100%", label: "Safety Record" },
-  { value: "AQF", label: "Certified Arborist" },
+  { value: "1", label: "Arborist, Every Job" },
 ];
 
 export default function Testimonials() {
@@ -49,7 +49,7 @@ export default function Testimonials() {
       {/* Background with tree canopy image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://images.unsplash.com/photo-1767463412573-0122945b7d52?w=1920&q=80"
+          src="/testimonials-bg.jpg"
           alt="Sunlight filtering through dark tree branches and leaves"
           fill
           className="object-cover"

@@ -13,7 +13,7 @@ const guarantees = [
     icon: Award,
     title: "Trade Qualified",
     description:
-      "AQF-certified with real trade experience across Melbourne and greater Victoria. Jordan has built his skills on the job — not in a classroom. Every technique has been refined through real-world operations in local conditions.",
+      "Certified with real trade experience across Melbourne and greater Victoria. Jordan built his skills on the job, not in a classroom. Every technique has been refined through real-world operations in local conditions.",
   },
   {
     icon: ClipboardCheck,
@@ -25,7 +25,7 @@ const guarantees = [
     icon: ShieldCheck,
     title: "Fully Insured",
     description:
-      "Full public liability insurance for total peace of mind. You\u2019re covered — whether you\u2019re a homeowner or a company subcontracting complex work.",
+      "Full public liability insurance for total peace of mind. You\u2019re covered whether you\u2019re a homeowner or a company subcontracting complex work.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function Guarantee() {
           </h2>
           <p className="mt-6 text-lg text-white/55 max-w-2xl mx-auto leading-relaxed">
             Whether you&apos;re a homeowner trusting someone with your property
-            or a company putting your reputation on the line — you need to know
+            or a company putting your reputation on the line, you need to know
             the person in the canopy holds themselves to the same standard you do.
           </p>
         </motion.div>
@@ -125,7 +125,7 @@ export default function Guarantee() {
         >
           <p className="text-white/40 text-sm max-w-lg mx-auto leading-relaxed">
             Jordan personally stands behind every job. If it&apos;s not right,
-            it gets fixed. That&apos;s not a policy — it&apos;s how the business runs.
+            it gets fixed. That&apos;s not a policy. It&apos;s how the business runs.
           </p>
         </motion.div>
       </div>

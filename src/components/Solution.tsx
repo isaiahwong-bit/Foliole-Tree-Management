@@ -14,12 +14,11 @@ type ServiceCategory = "homeowner" | "subcontracting";
 
 const homeownerServices = [
   {
-    image:
-      "https://plus.unsplash.com/premium_photo-1663133889210-1d52a1d7baec?w=800&q=80",
+    image: "/service-pruning.jpg",
     imageAlt: "Arborist with harness and saw performing precision tree pruning",
     title: "Pruning",
     description:
-      "Targeted pruning to Australian Standards (AS 4373). We strengthen your trees\u2019 structure while improving light, airflow, and natural form.",
+      "Pruning to Australian Standards (AS 4373). We strengthen your trees\u2019 structure while improving light, airflow, and natural form.",
     features: [
       "Dead wood removal",
       "Weight reduction",
@@ -28,8 +27,7 @@ const homeownerServices = [
     ],
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1768737427692-076271f2c25a?w=800&q=80",
+    image: "/service-tree-health.jpg",
     imageAlt:
       "Massive specimen tree with exposed root system in a park setting",
     title: "Tree Health & Diagnostics",
@@ -43,9 +41,8 @@ const homeownerServices = [
     ],
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1626828476637-5bd713ef9f22?w=800&q=80",
-    imageAlt: "Arborist climbing high in a tree canopy with safety equipment",
+    image: "/service-structural.jpg",
+    imageAlt: "Looking up at the large structural branches of a mature tree",
     title: "Structural Support",
     description:
       "Cabling and bracing for trees that need structural reinforcement. Preserving valuable trees safely and extending their lifespan.",
@@ -56,8 +53,7 @@ const homeownerServices = [
     ],
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1626828476637-5bd713ef9f22?w=800&q=80",
+    image: "/service-removal.jpg",
     imageAlt: "Arborist performing safe tree removal with proper equipment",
     title: "Tree Removals",
     description:
@@ -73,8 +69,7 @@ const homeownerServices = [
 
 const subcontractingServices = [
   {
-    image:
-      "https://images.unsplash.com/photo-1626828476637-5bd713ef9f22?w=800&q=80",
+    image: "/service-removal.jpg",
     imageAlt: "Arborist climbing high in a tree canopy with safety equipment",
     title: "Complex Climb Operations",
     description:
@@ -87,8 +82,7 @@ const subcontractingServices = [
     ],
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1768737427692-076271f2c25a?w=800&q=80",
+    image: "/service-tree-health.jpg",
     imageAlt:
       "Massive specimen tree with exposed root system in a park setting",
     title: "Decay Detection & Assessment",
@@ -102,12 +96,11 @@ const subcontractingServices = [
     ],
   },
   {
-    image:
-      "https://plus.unsplash.com/premium_photo-1663133889210-1d52a1d7baec?w=800&q=80",
+    image: "/service-pruning.jpg",
     imageAlt: "Arborist with harness performing precision tree work",
     title: "Capacity & Partnership",
     description:
-      "Reliable overflow support and ongoing partnership for tree management companies. Consistent standards, proper documentation, and seamless integration with your team.",
+      "Reliable overflow support and ongoing partnership for tree management companies. Consistent standards, proper documentation, and easy coordination with your team.",
     features: [
       "Overflow & surge capacity",
       "Municipal & council contract work",
@@ -156,8 +149,8 @@ export default function Solution() {
           </h2>
           <p className="mt-6 text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
             Whether you&apos;re a property owner seeking expert tree care or an
-            industry professional needing high-level subcontracting support —
-            Jordan delivers the same uncompromising standard.
+            industry professional needing reliable subcontracting support,
+            Jordan delivers the same standard of work.
           </p>
         </motion.div>
 
@@ -207,7 +200,11 @@ export default function Solution() {
               initial="hidden"
               whileInView="visible"
               viewport={viewportConfig}
-              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+              className={`grid sm:grid-cols-2 gap-6 lg:gap-8 ${
+                activeCategory === "homeowner"
+                  ? "lg:grid-cols-4"
+                  : "lg:grid-cols-3 max-w-5xl mx-auto"
+              }`}
             >
               {services.map((service, i) => (
                 <motion.div

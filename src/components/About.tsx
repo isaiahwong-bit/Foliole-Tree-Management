@@ -15,22 +15,22 @@ const credentials = [
   {
     icon: Award,
     title: "Certified Arborist",
-    detail: "AQF-certified with hands-on climbing and diagnostic experience across Melbourne and greater Victoria",
+    detail: "Qualified arborist with hands-on climbing and diagnostic experience across Melbourne and greater Victoria",
   },
   {
     icon: BookOpen,
     title: "Trade Qualified",
-    detail: "Years of local experience and AQF certification in arboriculture",
+    detail: "Years of local experience and formal certification in arboriculture",
   },
   {
     icon: Zap,
-    title: "Technical Rigour",
-    detail: "Decay detection, risk assessment, and structural analysis inform every intervention",
+    title: "The Hard Jobs",
+    detail: "Technical pruning, large tree work, and preservation projects. The challenging jobs are the ones Jordan enjoys most",
   },
   {
     icon: Leaf,
     title: "Preservation First",
-    detail: "Committed to the long-term health of every tree, not quick-fix solutions",
+    detail: "Focused on long-term tree health, not quick-fix solutions",
   },
   {
     icon: ShieldCheck,
@@ -106,16 +106,16 @@ export default function About() {
             </h2>
 
             <p className="mt-6 text-lg text-forest-800/70 leading-relaxed">
-              When you hire Foliole, you&apos;re hiring Jordan — not a sales team,
+              When you hire Foliole, you&apos;re hiring Jordan. Not a sales team,
               not a call centre, not a rotating roster. With years of
               professional arboriculture experience across Melbourne and greater
               Victoria, Jordan is the one who assesses your trees, plans the
-              work, and executes at height with the care of a qualified
+              work, and gets it done at height with the care of a qualified
               tradesman.
             </p>
             <p className="mt-4 text-forest-800/65 leading-relaxed">
-              Professional arboriculture — where disciplined safety protocols
-              meet genuine trade knowledge and hands-on experience. Every climb is methodical. Every cut is
+              Disciplined safety protocols, genuine trade knowledge, and
+              hands-on experience. Every climb is methodical. Every cut is
               deliberate. Every site is left immaculate. Whether sub-contracting
               complex operations for established firms or working directly with
               property owners, the standard never changes.
