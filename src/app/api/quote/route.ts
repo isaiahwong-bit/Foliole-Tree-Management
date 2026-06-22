@@ -8,10 +8,10 @@ import { NextRequest, NextResponse } from "next/server";
  * 1. Create a .env.local file in the project root
  * 2. Add these variables:
  *
- *    QUOTE_EMAIL_TO=jordan@foliole.com
+ *    QUOTE_EMAIL_TO=jordan@lumberjord.com.au
  *    SMTP_HOST=smtp.gmail.com
  *    SMTP_PORT=587
- *    SMTP_USER=jordan@foliole.com
+ *    SMTP_USER=jordan@lumberjord.com.au
  *    SMTP_PASS=your-app-password
  *
  * 3. Install nodemailer: npm install nodemailer @types/nodemailer
@@ -61,16 +61,16 @@ export async function POST(request: NextRequest) {
 
     // Format urgency label
     const urgencyLabels: Record<string, string> = {
-      flexible: "Flexible — no rush",
+      flexible: "Flexible, no rush",
       "within-month": "Within a month",
-      urgent: "Urgent — this week",
-      emergency: "Emergency — immediate",
+      urgent: "Urgent, this week",
+      emergency: "Emergency, immediate",
     };
 
     // Build email body
     const emailBody = `
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  NEW QUOTE REQUEST — FOLIOLE
+  NEW QUOTE REQUEST: LUMBERJORD
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Enquiry type:  ${isContractor ? "🏗️ Industry / Contractor" : "🏠 Property Owner"}
@@ -124,7 +124,7 @@ ${imageNames.length > 0 ? `PHOTOS ATTACHED (${imageNames.length})\n────�
     // );
     //
     // await transporter.sendMail({
-    //   from: `"Foliole Website" <${process.env.SMTP_USER}>`,
+    //   from: `"LumberJord Website" <${process.env.SMTP_USER}>`,
     //   to: process.env.QUOTE_EMAIL_TO,
     //   replyTo: email,
     //   subject: `Quote Request — ${name} — ${serviceType}`,

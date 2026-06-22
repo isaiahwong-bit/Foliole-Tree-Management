@@ -1,6 +1,24 @@
 @import "tailwindcss";
 
 @theme {
+  /* ── LumberJord brand palette ───────────────────────────── */
+  --color-navy: #141438;
+  --color-navy-light: #20204f;
+  --color-navy-dark: #0d0d28;
+
+  --color-orange: #f15f3a;
+  --color-orange-dark: #d94d2a;
+  --color-orange-light: #f47a5b;
+
+  --color-blue: #3b4d82;
+  --color-blue-light: #4d6099;
+
+  --color-olive: #62542b;
+  --color-olive-light: #7c6c3c;
+
+  --color-offwhite: #eeebe8;
+  --color-offwhite-dark: #e3ded8;
+
   --color-forest-950: #071a07;
   --color-forest-900: #0c260c;
   --color-forest-800: #143514;
@@ -56,8 +74,9 @@
   --color-cream: #f9f7f3;
   --color-cream-dark: #f0ece4;
 
-  --font-heading: "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  /* Buckwheat (headings) to be self-hosted later; Rubik used for now. */
+  --font-heading: var(--font-rubik), system-ui, sans-serif;
+  --font-body: var(--font-rubik), system-ui, sans-serif;
 }
 
 @layer base {
@@ -68,11 +87,11 @@
   }
 
   body {
-    @apply bg-cream text-forest-950 font-body;
+    @apply bg-offwhite text-navy font-body;
   }
 
   ::selection {
-    @apply bg-ember-200 text-forest-950;
+    @apply bg-orange text-white;
   }
 }
 

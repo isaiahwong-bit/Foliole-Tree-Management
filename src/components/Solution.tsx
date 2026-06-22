@@ -2,111 +2,77 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  fadeInUp,
-  staggerContainer,
-  scaleIn,
-  viewportConfig,
-} from "@/lib/animations";
-import Image from "next/image";
+import { fadeInUp, viewportConfig } from "@/lib/animations";
+import { Gallery4, type Gallery4Item } from "@/components/ui/gallery4";
 
 type ServiceCategory = "homeowner" | "subcontracting";
 
-const homeownerServices = [
+const homeownerServices: Gallery4Item[] = [
   {
+    id: "pruning",
     image: "/service-pruning.jpg",
     imageAlt: "Arborist with harness and saw performing precision tree pruning",
     title: "Pruning",
     description:
-      "Pruning to Australian Standards (AS 4373). We strengthen your trees\u2019 structure while improving light, airflow, and natural form.",
-    features: [
-      "Dead wood removal",
-      "Weight reduction",
-      "Formative pruning",
-      "Canopy restoration",
-    ],
+      "Pruning to Australian Standards (AS 4373): dead wood removal, weight reduction, formative pruning, and canopy restoration. We strengthen your trees’ structure while improving light, airflow, and natural form.",
+    href: "#contact",
   },
   {
+    id: "tree-health",
     image: "/service-tree-health.jpg",
-    imageAlt:
-      "Massive specimen tree with exposed root system in a park setting",
+    imageAlt: "Massive specimen tree with exposed root system in a park setting",
     title: "Tree Health & Diagnostics",
     description:
-      "Identifying decay, disease, root stress, and structural issues before they become emergencies. Informed care plans, not guesswork.",
-    features: [
-      "Decay detection & risk assessment",
-      "Visual health inspections",
-      "Soil & root analysis",
-      "Pest & disease identification",
-    ],
+      "Identifying decay, disease, root stress, and structural issues before they become emergencies. Decay detection, visual inspections, soil and root analysis: informed care plans, not guesswork.",
+    href: "#contact",
   },
   {
+    id: "structural",
     image: "/service-structural.jpg",
     imageAlt: "Looking up at the large structural branches of a mature tree",
     title: "Structural Support",
     description:
-      "Cabling and bracing for trees that need structural reinforcement. Preserving valuable trees safely and extending their lifespan.",
-    features: [
-      "Cable & bracing systems",
-      "Structural assessment",
-      "Load reduction",
-    ],
+      "Cabling and bracing for trees that need structural reinforcement. Structural assessment and load reduction that preserves valuable trees safely and extends their lifespan.",
+    href: "#contact",
   },
   {
+    id: "removals",
     image: "/service-removal.jpg",
     imageAlt: "Arborist performing safe tree removal with proper equipment",
     title: "Tree Removals",
     description:
-      "Safe, methodical tree removals for when a tree needs to come down. Fully insured and site-sensitive.",
-    features: [
-      "Confined space removals",
-      "Complex removals",
-      "Sectional dismantling",
-      "Stump grinding & processing",
-    ],
+      "Safe, methodical tree removals for when a tree needs to come down. Confined-space and complex removals, sectional dismantling, and stump grinding, fully insured and site-sensitive.",
+    href: "#contact",
   },
 ];
 
-const subcontractingServices = [
+const subcontractingServices: Gallery4Item[] = [
   {
+    id: "complex-climb",
     image: "/service-removal.jpg",
     imageAlt: "Arborist climbing high in a tree canopy with safety equipment",
     title: "Complex Climb Operations",
     description:
-      "High-level climbing support for operations beyond standard scope. Jordan brings the experience, skill, and composure that complex canopy work demands.",
-    features: [
-      "Advanced rigging & dismantling",
-      "Multi-stem & hazardous removals",
-      "Crane-assisted operations support",
-      "Confined & high-risk access work",
-    ],
+      "High-level climbing support for operations beyond standard scope: advanced rigging and dismantling, multi-stem and hazardous removals, crane-assisted and high-risk access work.",
+    href: "#contact",
   },
   {
+    id: "decay-assessment",
     image: "/service-tree-health.jpg",
-    imageAlt:
-      "Massive specimen tree with exposed root system in a park setting",
+    imageAlt: "Massive specimen tree with exposed root system in a park setting",
     title: "Decay Detection & Assessment",
     description:
-      "Identifying structural issues, decay, and risk factors in the canopy. Practical assessments that inform the right course of action.",
-    features: [
-      "Visual tree assessment (VTA)",
-      "Decay detection & mapping",
-      "Risk identification",
-      "Pre-work tree evaluations",
-    ],
+      "Identifying structural issues, decay, and risk factors in the canopy. Visual tree assessment (VTA), decay detection and mapping, and pre-work evaluations that inform the right course of action.",
+    href: "#contact",
   },
   {
+    id: "capacity",
     image: "/service-pruning.jpg",
     imageAlt: "Arborist with harness performing precision tree work",
     title: "Capacity & Partnership",
     description:
-      "Reliable overflow support and ongoing partnership for tree management companies. Consistent standards, proper documentation, and easy coordination with your team.",
-    features: [
-      "Overflow & surge capacity",
-      "Municipal & council contract work",
-      "Compliance documentation & reporting",
-      "Ongoing retainer arrangements",
-    ],
+      "Reliable overflow support and ongoing partnership for tree management companies: surge capacity, municipal and council contract work, compliance documentation, and retainer arrangements.",
+    href: "#contact",
   },
 ];
 
@@ -120,13 +86,9 @@ export default function Solution() {
       : subcontractingServices;
 
   return (
-    <section id="services" className="py-24 lg:py-36 relative overflow-hidden">
-      {/* Diagonal background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 right-0 h-[60%] bg-forest-950 diagonal-clip-subtle" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="services" className="py-20 lg:py-28 bg-offwhite">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-navy rounded-[2rem] lg:rounded-[2.5rem] px-6 sm:px-10 lg:px-16 py-16 lg:py-20">
         {/* Header */}
         <motion.div
           variants={fadeInUp}
@@ -135,14 +97,7 @@ export default function Solution() {
           viewport={viewportConfig}
           className="text-center mb-10 lg:mb-14"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-12 bg-ember-400" />
-            <span className="text-ember-400 text-sm font-medium tracking-[0.2em] uppercase">
-              Our Services
-            </span>
-            <div className="h-px w-12 bg-ember-400" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white leading-tight tracking-tight text-balance">
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl font-bold text-white leading-tight tracking-tight text-balance">
             Professional tree care for
             <br className="hidden sm:block" />
             every level of need
@@ -167,7 +122,7 @@ export default function Solution() {
               onClick={() => setActiveCategory("homeowner")}
               className={`flex-1 sm:flex-none px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5 text-xs sm:text-sm font-medium transition-all duration-300 ${
                 activeCategory === "homeowner"
-                  ? "bg-ember-500 text-white"
+                  ? "bg-orange text-white"
                   : "text-white/50 hover:text-white/70"
               }`}
             >
@@ -177,7 +132,7 @@ export default function Solution() {
               onClick={() => setActiveCategory("subcontracting")}
               className={`flex-1 sm:flex-none px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5 text-xs sm:text-sm font-medium transition-all duration-300 ${
                 activeCategory === "subcontracting"
-                  ? "bg-ember-500 text-white"
+                  ? "bg-orange text-white"
                   : "text-white/50 hover:text-white/70"
               }`}
             >
@@ -186,7 +141,7 @@ export default function Solution() {
           </div>
         </motion.div>
 
-        {/* Service Cards Grid */}
+        {/* Service carousel */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
@@ -195,62 +150,10 @@ export default function Solution() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
           >
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportConfig}
-              className={`grid sm:grid-cols-2 gap-6 lg:gap-8 ${
-                activeCategory === "homeowner"
-                  ? "lg:grid-cols-4"
-                  : "lg:grid-cols-3 max-w-5xl mx-auto"
-              }`}
-            >
-              {services.map((service, i) => (
-                <motion.div
-                  key={`${activeCategory}-${i}`}
-                  variants={scaleIn}
-                  className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500"
-                >
-                  {/* Image */}
-                  <div className="relative h-48 lg:h-52 overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.imageAlt}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    {/* Orange accent bar at bottom of image */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-ember-400 via-ember-500 to-ember-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-7">
-                    <h3 className="text-lg font-semibold text-forest-950 mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-forest-800/65 leading-relaxed mb-5 text-sm">
-                      {service.description}
-                    </p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, j) => (
-                        <li
-                          key={j}
-                          className="flex items-center gap-2 text-sm text-forest-700"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
+            <Gallery4 items={services} tone="light" />
           </motion.div>
         </AnimatePresence>
+        </div>
       </div>
     </section>
   );

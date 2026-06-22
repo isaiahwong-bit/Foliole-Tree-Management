@@ -51,14 +51,7 @@ export default function Process() {
           viewport={viewportConfig}
           className="text-center mb-16 lg:mb-20"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-12 bg-ember-300" />
-            <span className="text-ember-500 text-sm font-medium tracking-[0.2em] uppercase">
-              How It Works
-            </span>
-            <div className="h-px w-12 bg-ember-300" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-forest-950 leading-tight tracking-tight text-balance">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-navy leading-tight tracking-tight text-balance">
             A clear, methodical process
             <br className="hidden sm:block" />
             from enquiry to completion
@@ -74,7 +67,7 @@ export default function Process() {
           className="relative"
         >
           {/* Connecting line (desktop) — spans between first and last step circle centers */}
-          <div className="hidden lg:block absolute top-[48px] left-[12.5%] right-[12.5%] h-px bg-forest-200" />
+          <div className="hidden lg:block absolute top-[48px] left-[12.5%] right-[12.5%] h-px bg-navy-light" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {steps.map((item, i) => (
@@ -85,22 +78,22 @@ export default function Process() {
               >
                 <div className="flex flex-col items-center lg:items-start">
                   <div className="relative mb-6">
-                    <div className="w-12 h-12 rounded-full bg-forest-900 flex items-center justify-center relative z-10">
+                    <div className="w-12 h-12 rounded-full bg-navy flex items-center justify-center relative z-10">
                       <item.icon
                         size={20}
                         className="text-white"
                         strokeWidth={1.5}
                       />
                     </div>
-                    <span className="absolute -top-2 -right-3 text-xs font-bold text-ember-500 bg-ember-50 px-2 py-0.5 rounded-full border border-ember-100">
+                    <span className="absolute -top-2 -right-3 text-xs font-bold text-orange bg-orange/10 px-2 py-0.5 rounded-full border border-orange-light">
                       {item.step}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-semibold text-forest-950 mb-3">
+                  <h3 className="text-lg font-semibold text-navy mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-forest-800/60 leading-relaxed text-sm">
+                  <p className="text-navy/60 leading-relaxed text-sm">
                     {item.description}
                   </p>
                 </div>

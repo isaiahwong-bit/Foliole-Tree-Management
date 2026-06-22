@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://foliole-tree-management.vercel.app";
+  const baseUrl = "https://lumberjord.com.au";
 
   return [
     {

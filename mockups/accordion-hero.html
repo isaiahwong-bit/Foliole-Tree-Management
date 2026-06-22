@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LumberJord — accordion hero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#141438; --orange:#F15F3A; --blue:#3B4D82; --green:#62542B;
+    --offwhite:#EEEBE8;          /* adjustable */
+    --accent:var(--orange);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Rubik",system-ui,sans-serif;background:var(--offwhite);color:var(--navy);-webkit-font-smoothing:antialiased;transition:background .3s}
+  h1{font-weight:800;letter-spacing:-.025em;line-height:1.03}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+
+  /* controls */
+  .toggle{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;display:flex;align-items:center;gap:14px;padding:11px 32px;font-size:13px;flex-wrap:wrap}
+  .toggle b{font-weight:700}
+  .toggle .grp{margin-left:auto;display:flex;gap:7px;align-items:center}
+  .toggle .grp.lbl{margin-left:24px}
+  .toggle .ttl{opacity:.55;font-weight:400;margin-right:4px}
+  .pill{border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;padding:6px 12px;border-radius:999px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:7px}
+  .pill .chip{width:13px;height:13px;border-radius:3px;border:1px solid rgba(255,255,255,.4)}
+  .pill.active{background:rgba(255,255,255,.16);border-color:#fff}
+
+  /* navbar */
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .nav img{height:30px;width:auto}
+  .nav .links{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:500;color:var(--navy)}
+  .nav .cta{background:var(--accent);color:#fff;padding:9px 18px;border-radius:999px;font-weight:600;font-size:14px;transition:background .3s}
+
+  /* hero layout — text left, accordion right (the reference layout) */
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:40px 0 80px}
+  .eyebrow{display:flex;align-items:center;gap:12px;color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:22px;transition:color .3s}
+  .eyebrow .rule{height:2px;width:42px;background:var(--accent);display:inline-block;transition:background .3s}
+  .hero h1{font-size:58px}
+  .hero h1 .hl{color:var(--accent);transition:color .3s}
+  .hero p{margin-top:22px;max-width:520px;color:rgba(20,20,56,.66);font-size:18px;line-height:1.6}
+  .btns{margin-top:32px;display:flex;gap:14px}
+  .btn-primary{background:var(--accent);color:#fff;padding:15px 26px;border-radius:999px;font-weight:700;font-size:15px;transition:background .3s}
+  .btn-ghost{border:1px solid rgba(20,20,56,.25);color:var(--navy);padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px}
+  .trust{margin-top:40px;display:flex;gap:28px;font-size:14px;color:rgba(20,20,56,.55)}
+  .trust .dot{width:7px;height:7px;border-radius:99px;background:var(--accent);display:inline-block;margin-right:8px;transition:background .3s}
+
+  /* accordion */
+  .acc{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:14px}
+  .item{position:relative;height:460px;border-radius:18px;overflow:hidden;cursor:pointer;width:60px;flex:0 0 auto;transition:width .7s cubic-bezier(.25,.46,.45,.94)}
+  .item.active{width:340px}
+  .item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .item .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,56,.05),rgba(20,20,56,.55))}
+  .item .cap{position:absolute;color:#fff;font-size:17px;font-weight:600;white-space:nowrap;transition:all .35s ease;left:50%}
+  .item .cap{bottom:96px;transform:translateX(-50%) rotate(90deg)}
+  .item.active .cap{bottom:22px;transform:translateX(-50%) rotate(0)}
+
+  .foot{background:var(--navy);color:#bbb;text-align:center;padding:11px;font-size:12px}
+  @media (max-width:900px){.hero{grid-template-columns:1fr;gap:28px}.hero h1{font-size:40px}.acc{overflow-x:auto;justify-content:flex-start}.nav .links span:not(.cta){display:none}}
+</style>
+</head>
+<body>
+  <div class="toggle">
+    <b>LumberJord — accordion hero</b>
+    <span class="ttl">Rubik (Buckwheat later) · real service photos · hover the strips</span>
+    <div class="grp lbl"><span class="ttl">Off-white:</span>
+      <button class="pill active" onclick="setBg(this,'#EEEBE8')"><span class="chip" style="background:#EEEBE8"></span>Brand #EEEBE8</button>
+      <button class="pill" onclick="setBg(this,'#F4F1EA')"><span class="chip" style="background:#F4F1EA"></span>Warmer</button>
+      <button class="pill" onclick="setBg(this,'#F6F6F3')"><span class="chip" style="background:#F6F6F3"></span>Lighter</button>
+      <button class="pill" onclick="setBg(this,'#E7E2D9')"><span class="chip" style="background:#E7E2D9"></span>Deeper</button>
+    </div>
+    <div class="grp"><span class="ttl">Accent:</span>
+      <button class="pill active" onclick="setAccent(this,'var(--orange)')"><span class="chip" style="background:#F15F3A"></span>Orange</button>
+      <button class="pill" onclick="setAccent(this,'var(--green)')"><span class="chip" style="background:#62542B"></span>Green</button>
+      <button class="pill" onclick="setAccent(this,'var(--blue)')"><span class="chip" style="background:#3B4D82"></span>Blue</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- navbar -->
+    <div class="nav">
+      <img src="../LumberJord/300ppi/LJ%20Primary%20Logo%20Navy.png" alt="LumberJord" />
+      <div class="links"><span>Services</span><span>Process</span><span>About</span><span>Testimonials</span><span class="cta">Get a Quote</span></div>
+    </div>
+
+    <!-- hero -->
+    <section class="hero">
+      <!-- left: copy -->
+      <div>
+        <div class="eyebrow"><span class="rule"></span>Professional Arboriculture</div>
+        <h1>Tree care,<br><span class="hl">done properly</span></h1>
+        <p>LumberJord is a climbing arborist servicing Melbourne and greater Victoria with a hands-on approach to arboriculture — best tree health, best-practice end-to-end services, and innovation.</p>
+        <div class="btns"><span class="btn-primary">Get a Free Quote →</span><span class="btn-ghost">Our Services</span></div>
+        <div class="trust"><span><span class="dot"></span>Melbourne Based</span><span><span class="dot"></span>Fully Insured</span></div>
+      </div>
+
+      <!-- right: interactive image accordion -->
+      <div class="acc" id="acc">
+        <div class="item" data-i="0"><img src="../public/service-pruning.jpg" alt=""><div class="shade"></div><span class="cap">Pruning</span></div>
+        <div class="item" data-i="1"><img src="../public/service-tree-health.jpg" alt=""><div class="shade"></div><span class="cap">Tree Health</span></div>
+        <div class="item" data-i="2"><img src="../public/service-structural.jpg" alt=""><div class="shade"></div><span class="cap">Structural Support</span></div>
+        <div class="item" data-i="3"><img src="../public/service-removal.jpg" alt=""><div class="shade"></div><span class="cap">Tree Removals</span></div>
+        <div class="item active" data-i="4"><img src="../public/jordan-climbing.jpeg" alt=""><div class="shade"></div><span class="cap">Subcontracting</span></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="foot">Wireframe preview · off-white &amp; accent are adjustable above · photos are the real /public assets</div>
+
+<script>
+  var items = Array.prototype.slice.call(document.querySelectorAll('.item'));
+  items.forEach(function(el){
+    el.addEventListener('mouseenter', function(){
+      items.forEach(function(x){x.classList.remove('active')});
+      el.classList.add('active');
+    });
+  });
+  function setBg(btn,c){
+    document.documentElement.style.setProperty('--offwhite',c);
+    mark(btn);
+  }
+  function setAccent(btn,c){
+    document.documentElement.style.setProperty('--accent',c);
+    mark(btn);
+  }
+  function mark(btn){
+    var sibs = btn.parentNode.querySelectorAll('.pill');
+    sibs.forEach(function(s){s.classList.remove('active')});
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>

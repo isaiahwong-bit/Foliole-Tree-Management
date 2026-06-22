@@ -2,12 +2,12 @@ export default function JsonLd() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://foliole-tree-management.vercel.app",
-    name: "Foliole Tree Management",
+    "@id": "https://lumberjord.com.au",
+    name: "LumberJord",
     description:
       "Melbourne-based qualified arborist. Professional tree care including pruning to AS 4373, tree health diagnostics, structural support, removals, and subcontracting across Melbourne and greater Victoria.",
-    url: "https://foliole-tree-management.vercel.app",
-    image: "https://foliole-tree-management.vercel.app/jordan-climbing.jpeg",
+    url: "https://lumberjord.com.au",
+    image: "https://lumberjord.com.au/jordan-climbing.jpeg",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",

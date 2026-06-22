@@ -1,44 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  fadeInUp,
-  staggerContainer,
-  scaleIn,
-  viewportConfig,
-} from "@/lib/animations";
+import { fadeInUp, viewportConfig } from "@/lib/animations";
 import Image from "next/image";
-import { Star, Quote } from "lucide-react";
+import {
+  TestimonialsColumn,
+  type Testimonial,
+} from "@/components/ui/testimonials-columns";
 
-const testimonials = [
+const testimonials: Testimonial[] = [
   {
-    quote:
-      "Jordan transformed our estate\u2019s tree line. He identified a structural issue in our mature oak that two previous companies missed entirely. Really knowledgeable and a pleasure to work with.",
-    author: "Catherine M.",
+    text: "Jordan transformed our estate’s tree line. He identified a structural issue in our mature oak that two previous companies missed entirely. Really knowledgeable and a pleasure to work with.",
+    name: "Catherine M.",
     role: "Estate Manager",
-    stars: 5,
   },
   {
-    quote:
-      "We sub-contract Jordan for our most complex climbs and removals. He\u2019s precise, reliable, and completely professional. His safety standards match ours and his documentation is thorough. That\u2019s rare in this industry.",
-    author: "David R.",
+    text: "We sub-contract Jordan for our most complex climbs and removals. He’s precise, reliable, and completely professional. His safety standards match ours and his documentation is thorough. That’s rare in this industry.",
+    name: "David R.",
     role: "Director, Regional Tree Services",
-    stars: 5,
   },
   {
-    quote:
-      "After years of dealing with \u2018tree loppers\u2019 who left our property worse than they found it, Foliole was a breath of fresh air. Jordan explained every cut before he made it and the results speak for themselves.",
-    author: "Sarah & James P.",
+    text: "After years of dealing with ‘tree loppers’ who left our property worse than they found it, LumberJord was a breath of fresh air. Jordan explained every cut before he made it and the results speak for themselves.",
+    name: "Sarah & James P.",
     role: "Homeowners",
-    stars: 5,
   },
 ];
 
-const stats = [
-  { value: "500+", label: "Trees Managed" },
-  { value: "100%", label: "Safety Record" },
-  { value: "1", label: "Arborist, Every Job" },
-];
+// Rotate the real reviews so duplicate cards don't align across columns.
+const firstColumn = [testimonials[0], testimonials[1], testimonials[2]];
+const secondColumn = [testimonials[1], testimonials[2], testimonials[0]];
+const thirdColumn = [testimonials[2], testimonials[0], testimonials[1]];
 
 export default function Testimonials() {
   return (
@@ -55,12 +46,12 @@ export default function Testimonials() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-forest-950/90" />
+        <div className="absolute inset-0 bg-navy/90" />
         <div
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 70% 30%, rgba(249,115,22,0.2) 0%, transparent 50%)",
+              "radial-gradient(circle at 70% 30%, rgba(241,95,58,0.2) 0%, transparent 50%)",
           }}
         />
       </div>
@@ -72,82 +63,29 @@ export default function Testimonials() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportConfig}
-          className="text-center mb-16 lg:mb-20"
+          className="text-center mb-12 lg:mb-16"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-12 bg-ember-400" />
-            <span className="text-ember-400 text-sm font-medium tracking-[0.2em] uppercase">
-              Testimonials
-            </span>
-            <div className="h-px w-12 bg-ember-400" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white leading-tight tracking-tight text-balance">
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl font-bold text-white leading-tight tracking-tight text-balance">
             Trusted by property owners
             <br className="hidden sm:block" />
             and industry professionals
           </h2>
         </motion.div>
 
-        {/* Testimonial Cards */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
-          className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-20"
-        >
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              variants={scaleIn}
-              className="relative bg-white/[0.06] backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-ember-400/30 transition-colors duration-300"
-            >
-              <Quote
-                size={28}
-                className="text-ember-400/30 mb-5"
-                strokeWidth={1.5}
-              />
-
-              {/* Stars */}
-              <div className="flex gap-1 mb-5">
-                {Array.from({ length: t.stars }).map((_, j) => (
-                  <Star
-                    key={j}
-                    size={14}
-                    className="text-ember-400 fill-ember-400"
-                  />
-                ))}
-              </div>
-
-              <p className="text-white/75 leading-relaxed mb-8 text-[15px]">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-
-              <div className="border-t border-white/10 pt-5">
-                <p className="text-white font-semibold text-sm">{t.author}</p>
-                <p className="text-white/45 text-sm mt-0.5">{t.role}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
-          className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
-        >
-          {stats.map((stat, i) => (
-            <motion.div key={i} variants={fadeInUp} className="text-center">
-              <p className="text-3xl lg:text-4xl font-bold text-ember-400 tracking-tight">
-                {stat.value}
-              </p>
-              <p className="text-white/45 text-sm mt-1">{stat.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Auto-scrolling testimonial columns */}
+        <div className="flex justify-center gap-6 max-h-[560px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)]">
+          <TestimonialsColumn testimonials={firstColumn} duration={17} />
+          <TestimonialsColumn
+            testimonials={secondColumn}
+            className="hidden md:block"
+            duration={22}
+          />
+          <TestimonialsColumn
+            testimonials={thirdColumn}
+            className="hidden lg:block"
+            duration={19}
+          />
+        </div>
       </div>
     </section>
   );

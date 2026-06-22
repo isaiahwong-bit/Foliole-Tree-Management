@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -39,20 +40,19 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-cream/90 backdrop-blur-xl shadow-sm"
-            : "bg-transparent"
+          scrolled ? "bg-offwhite/90 backdrop-blur-xl shadow-sm" : "bg-transparent"
         }`}
       >
         <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-18 lg:h-20">
-          <a href="#" className="relative z-10">
-            <span
-              className={`text-xl lg:text-2xl font-semibold tracking-tight transition-colors duration-300 ${
-                scrolled ? "text-forest-900" : "text-white"
-              }`}
-            >
-              Foliole
-            </span>
+          <a href="#" className="relative z-10 flex items-center" aria-label="LumberJord home">
+            <Image
+              src="/brand/lj-secondary-navy.png"
+              alt="LumberJord"
+              width={329}
+              height={40}
+              priority
+              className="h-6 sm:h-7 lg:h-7 w-auto"
+            />
           </a>
 
           {/* Desktop Nav */}
@@ -61,20 +61,14 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:opacity-70 ${
-                  scrolled ? "text-forest-800" : "text-white/90"
-                }`}
+                className="text-sm font-medium tracking-wide text-navy/80 hover:text-navy transition-colors duration-300"
               >
                 {link.label}
               </a>
             ))}
             <a
               href="#contact"
-              className={`text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300 ${
-                scrolled
-                  ? "bg-ember-500 text-white hover:bg-ember-600"
-                  : "bg-ember-500 text-white hover:bg-ember-400"
-              }`}
+              className="text-sm font-semibold px-6 py-2.5 rounded-full bg-orange text-white hover:bg-orange-dark transition-all duration-300"
             >
               Get a Quote
             </a>
@@ -83,9 +77,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden relative z-10 p-2 transition-colors ${
-              scrolled || mobileOpen ? "text-forest-900" : "text-white"
-            }`}
+            className="lg:hidden relative z-10 p-2 text-navy transition-colors"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -101,7 +93,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-cream"
+            className="fixed inset-0 z-40 bg-offwhite"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -115,7 +107,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-2xl font-medium text-forest-900 hover:text-forest-600 transition-colors"
+                  className="text-2xl font-medium text-navy hover:text-orange transition-colors"
                 >
                   {link.label}
                 </a>
@@ -123,7 +115,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 text-lg font-semibold px-8 py-3 rounded-full bg-ember-500 text-white hover:bg-ember-600 transition-colors"
+                className="mt-4 text-lg font-semibold px-8 py-3 rounded-full bg-orange text-white hover:bg-orange-dark transition-colors"
               >
                 Get a Quote
               </a>

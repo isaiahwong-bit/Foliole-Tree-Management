@@ -33,7 +33,7 @@ export default function Guarantee() {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-forest-950" />
+      <div className="absolute inset-0 -z-10 bg-navy" />
 
       {/* Subtle geometric pattern */}
       <div
@@ -62,13 +62,6 @@ export default function Guarantee() {
           viewport={viewportConfig}
           className="text-center mb-16 lg:mb-20"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-12 bg-ember-400" />
-            <span className="text-ember-400 text-sm font-medium tracking-[0.2em] uppercase">
-              The Foliole Guarantee
-            </span>
-            <div className="h-px w-12 bg-ember-400" />
-          </div>
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white leading-tight tracking-tight text-balance">
             Commitment to quality
           </h2>
@@ -91,13 +84,13 @@ export default function Guarantee() {
             <motion.div
               key={i}
               variants={fadeInUp}
-              className="group relative bg-white/[0.06] backdrop-blur-sm rounded-2xl p-8 lg:p-9 border border-white/10 hover:border-ember-400/30 transition-all duration-300"
+              className="group relative bg-white/[0.06] backdrop-blur-sm rounded-2xl p-8 lg:p-9 border border-white/10 hover:border-orange/30 transition-all duration-300"
             >
               {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-ember-500/15 flex items-center justify-center mb-6 group-hover:bg-ember-500/25 transition-colors duration-300">
+              <div className="w-12 h-12 rounded-xl bg-orange/15 flex items-center justify-center mb-6 group-hover:bg-orange/25 transition-colors duration-300">
                 <item.icon
                   size={22}
-                  className="text-ember-400"
+                  className="text-orange"
                   strokeWidth={1.5}
                 />
               </div>
@@ -110,7 +103,7 @@ export default function Guarantee() {
               </p>
 
               {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-ember-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-orange/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
           ))}
         </motion.div>

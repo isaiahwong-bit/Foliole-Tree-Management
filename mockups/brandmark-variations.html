@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LumberJord — brandmark variations</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{ --navy:#141438; --orange:#F15F3A; --offwhite:#EEEBE8; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Rubik",system-ui,sans-serif;background:var(--offwhite);color:var(--navy);-webkit-font-smoothing:antialiased}
+  h1{font-weight:800;letter-spacing:-.025em;line-height:1.03}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+
+  .toggle{position:sticky;top:0;z-index:60;background:var(--navy);color:#fff;display:flex;align-items:center;gap:12px;padding:11px 32px;font-size:13px;flex-wrap:wrap}
+  .toggle b{font-weight:700}
+  .toggle .ttl{opacity:.55;font-weight:400}
+  .toggle .pills{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap}
+  .pill{border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;padding:6px 13px;border-radius:999px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer}
+  .pill.active{background:var(--orange);border-color:var(--orange)}
+  .note{background:#fff;border-bottom:1px solid rgba(20,20,56,.08);color:rgba(20,20,56,.72);font-size:13px;padding:10px 32px}
+
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+  .nav img{height:28px;width:auto}
+  .nav .links{display:flex;gap:24px;align-items:center;font-size:14px;font-weight:500}
+  .nav .cta{background:var(--orange);color:#fff;padding:9px 18px;border-radius:999px;font-weight:600;font-size:14px}
+
+  .hero{position:relative;overflow:hidden;min-height:560px}
+  /* the brandmark element */
+  #bm{position:absolute;width:auto;pointer-events:none;user-select:none;transition:all .4s ease;z-index:0}
+
+  .grid{position:relative;z-index:10;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:36px 0 72px}
+  .eyebrow{display:flex;align-items:center;gap:12px;color:var(--orange);font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px}
+  .eyebrow .rule{height:2px;width:42px;background:var(--orange)}
+  .hero h1{font-size:56px}
+  .hero h1 .hl{color:var(--orange)}
+  .hero p{margin-top:20px;max-width:500px;color:rgba(20,20,56,.66);font-size:17px;line-height:1.6}
+  .btns{margin-top:30px;display:flex;gap:14px}
+  .btn-primary{background:var(--orange);color:#fff;padding:14px 24px;border-radius:999px;font-weight:700;font-size:15px}
+  .btn-ghost{border:1px solid rgba(20,20,56,.25);color:var(--navy);padding:14px 24px;border-radius:999px;font-weight:600;font-size:15px}
+
+  .acc{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:12px}
+  .item{position:relative;height:440px;border-radius:18px;overflow:hidden;cursor:pointer;width:56px;flex:0 0 auto;transition:width .7s cubic-bezier(.25,.46,.45,.94)}
+  .item.active{width:320px}
+  .item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .item .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,56,.05),rgba(20,20,56,.5))}
+  .item .cap{position:absolute;left:50%;color:#fff;font-weight:600;white-space:nowrap;transition:all .35s ease;bottom:92px;transform:translateX(-50%) rotate(90deg)}
+  .item.active .cap{bottom:20px;transform:translateX(-50%) rotate(0)}
+
+  @media (max-width:900px){.grid{grid-template-columns:1fr}.hero h1{font-size:40px}.acc{overflow-x:auto;justify-content:flex-start}}
+</style>
+</head>
+<body>
+  <div class="toggle">
+    <b>Brandmark variations</b><span class="ttl">— pick a treatment</span>
+    <div class="pills">
+      <button class="pill active" onclick="setV(0,this)">1 · Orange ↙ (current)</button>
+      <button class="pill" onclick="setV(1,this)">2 · Navy subtle</button>
+      <button class="pill" onclick="setV(2,this)">3 · Navy ↗ top-right</button>
+      <button class="pill" onclick="setV(3,this)">4 · Climbing accordion</button>
+      <button class="pill" onclick="setV(4,this)">5 · Giant faint backdrop</button>
+    </div>
+  </div>
+  <div class="note" id="note"></div>
+
+  <div class="wrap">
+    <div class="nav">
+      <img src="../public/brand/lj-secondary-navy.png" alt="LumberJord" />
+      <div class="links"><span>Services</span><span>Process</span><span>About</span><span class="cta">Get a Quote</span></div>
+    </div>
+
+    <section class="hero">
+      <img id="bm" src="../public/brand/lj-brandmark-orange.png" alt="" />
+      <div class="grid">
+        <div>
+          <div class="eyebrow"><span class="rule"></span>Professional Arboriculture</div>
+          <h1>Tree care,<br><span class="hl">done properly</span></h1>
+          <p>LumberJord is a climbing arborist servicing Melbourne and greater Victoria with a hands-on approach to arboriculture.</p>
+          <div class="btns"><span class="btn-primary">Get a Free Quote →</span><span class="btn-ghost">Our Services</span></div>
+        </div>
+        <div class="acc" id="acc">
+          <div class="item" data-i="0"><img src="../public/service-pruning.jpg" alt=""><div class="shade"></div><span class="cap">Pruning</span></div>
+          <div class="item" data-i="1"><img src="../public/service-tree-health.jpg" alt=""><div class="shade"></div><span class="cap">Tree Health</span></div>
+          <div class="item" data-i="2"><img src="../public/service-structural.jpg" alt=""><div class="shade"></div><span class="cap">Structural</span></div>
+          <div class="item" data-i="3"><img src="../public/service-removal.jpg" alt=""><div class="shade"></div><span class="cap">Removals</span></div>
+          <div class="item active" data-i="4"><img src="../public/jordan-climbing.jpeg" alt=""><div class="shade"></div><span class="cap">Subcontracting</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<script>
+  var NAVY="../public/brand/lj-brandmark-navy.png", ORANGE="../public/brand/lj-brandmark-orange.png", WHITE="../public/brand/lj-brandmark-white.png";
+  // each preset: src, and style props (reset all each time)
+  var V = [
+    {src:ORANGE, css:{height:"760px",left:"-120px",right:"auto",top:"auto",bottom:"-70px",opacity:".13",zIndex:0}, note:"<b>1 · Orange, bottom-left (current build).</b> Large orange climber rising from the corner at 13%. Warm, visible, but overlaps the body copy."},
+    {src:NAVY, css:{height:"760px",left:"-120px",right:"auto",top:"auto",bottom:"-70px",opacity:".06",zIndex:0}, note:"<b>2 · Navy subtle watermark.</b> Same placement, navy at 6% — a quiet texture. Most understated."},
+    {src:NAVY, css:{height:"700px",left:"auto",right:"-130px",top:"-90px",bottom:"auto",opacity:".08",zIndex:0}, note:"<b>3 · Navy, top-right bleed.</b> Fills the empty space behind/above the accordion, away from text. Balances the composition diagonally."},
+    {src:NAVY, css:{height:"500px",left:"46%",right:"auto",top:"auto",bottom:"24px",opacity:"1",zIndex:20}, note:"<b>4 · Climbing the accordion.</b> Solid navy climber straddling the left edge of the photo stack — literally scaling the services. Most conceptual; covers part of the first strip."},
+    {src:ORANGE, css:{height:"920px",left:"50%",right:"auto",top:"50%",bottom:"auto",opacity:".05",zIndex:0,transform:"translate(-50%,-50%)"}, note:"<b>5 · Giant faint backdrop.</b> Oversized climber centered behind everything at 5%. Subtle large-scale brand texture."}
+  ];
+  var bm=document.getElementById("bm"), note=document.getElementById("note");
+  function setV(i,btn){
+    var v=V[i];
+    bm.src=v.src;
+    // reset
+    bm.style.cssText="position:absolute;width:auto;pointer-events:none;transition:all .4s ease;";
+    for(var k in v.css){ bm.style[k]=v.css[k]; }
+    if(!v.css.transform) bm.style.transform="none";
+    note.innerHTML=v.note;
+    document.querySelectorAll(".pill").forEach(function(p){p.classList.remove("active")});
+    btn.classList.add("active");
+  }
+  // accordion hover
+  Array.prototype.slice.call(document.querySelectorAll(".item")).forEach(function(el,_,all){
+    el.addEventListener("mouseenter",function(){all.forEach(function(x){x.classList.remove("active")});el.classList.add("active");});
+  });
+  // init
+  (function(){var v=V[0];for(var k in v.css){bm.style[k]=v.css[k];}note.innerHTML=v.note;})();
+</script>
+</body>
+</html>

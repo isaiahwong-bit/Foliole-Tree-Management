@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LumberJord — navy hero preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{ --navy:#141438; --orange:#F15F3A; --offwhite:#EEEBE8; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Rubik",system-ui,sans-serif;background:var(--navy);color:#fff;-webkit-font-smoothing:antialiased}
+  h1{font-weight:800;letter-spacing:-.025em;line-height:1.03}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+  .cap{background:#000;color:#9ea;opacity:.85;font-size:12px;padding:8px 32px;color:#cbd}
+
+  .hero{position:relative;overflow:hidden;min-height:640px;
+    background:
+      radial-gradient(ellipse at 78% 30%, rgba(241,95,58,.16) 0%, transparent 55%),
+      linear-gradient(180deg, #15153c 0%, #101030 100%);}
+
+  /* large brandmark watermark */
+  #bm{position:absolute;bottom:-60px;left:-110px;height:760px;width:auto;opacity:.10;pointer-events:none}
+
+  .nav{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .nav img{height:28px;width:auto}
+  .nav .links{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:500;color:rgba(255,255,255,.82)}
+  .nav .cta{background:var(--orange);color:#fff;padding:9px 18px;border-radius:999px;font-weight:600;font-size:14px}
+
+  .grid{position:relative;z-index:10;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:44px 0 84px}
+  .hero h1{font-size:62px;color:#fff}
+  .hero h1 .hl{color:var(--orange)}
+  .hero p{margin-top:22px;max-width:520px;color:rgba(255,255,255,.72);font-size:18px;line-height:1.6}
+  .btns{margin-top:32px;display:flex;gap:14px}
+  .btn-primary{background:var(--orange);color:#fff;padding:15px 26px;border-radius:999px;font-weight:700;font-size:15px}
+  .btn-ghost{border:1px solid rgba(255,255,255,.35);color:#fff;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px}
+  .trust{margin-top:42px;display:flex;gap:28px;font-size:14px;color:rgba(255,255,255,.6)}
+  .trust .dot{width:7px;height:7px;border-radius:99px;background:var(--orange);display:inline-block;margin-right:8px}
+
+  .acc{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:13px}
+  .item{position:relative;height:460px;border-radius:18px;overflow:hidden;cursor:pointer;width:58px;flex:0 0 auto;transition:width .7s cubic-bezier(.25,.46,.45,.94)}
+  .item.active{width:330px}
+  .item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .item .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,56,.1),rgba(20,20,56,.6))}
+  .item .capt{position:absolute;left:50%;color:#fff;font-weight:600;white-space:nowrap;transition:all .35s ease;bottom:94px;transform:translateX(-50%) rotate(90deg)}
+  .item.active .capt{bottom:20px;transform:translateX(-50%) rotate(0)}
+  @media (max-width:900px){.grid{grid-template-columns:1fr;gap:28px}.hero h1{font-size:42px}.acc{overflow-x:auto;justify-content:flex-start}}
+</style>
+</head>
+<body>
+  <div class="cap">PREVIEW · Navy background · secondary wordmark in orange · headline white + orange · (Rubik; Buckwheat later)</div>
+  <section class="hero">
+    <img id="bm" src="../public/brand/lj-brandmark-orange.png" alt="" />
+    <div class="wrap">
+      <div class="nav">
+        <img src="../public/brand/lj-secondary-orange.png" alt="LumberJord" />
+        <div class="links"><span>Services</span><span>Process</span><span>About</span><span>Testimonials</span><span class="cta">Get a Quote</span></div>
+      </div>
+      <div class="grid">
+        <div>
+          <h1>Tree care,<br><span class="hl">done properly</span></h1>
+          <p>LumberJord is a climbing arborist servicing Melbourne and greater Victoria with a hands-on approach to arboriculture. Focused on tree health, best-practice end-to-end services, and innovation.</p>
+          <div class="btns"><span class="btn-primary">Get a Free Quote →</span><span class="btn-ghost">Our Services</span></div>
+          <div class="trust"><span><span class="dot"></span>Melbourne Based</span><span><span class="dot"></span>Fully Insured</span></div>
+        </div>
+        <div class="acc">
+          <div class="item"><img src="../public/service-pruning.jpg" alt=""><div class="shade"></div><span class="capt">Pruning</span></div>
+          <div class="item"><img src="../public/service-tree-health.jpg" alt=""><div class="shade"></div><span class="capt">Tree Health</span></div>
+          <div class="item"><img src="../public/service-structural.jpg" alt=""><div class="shade"></div><span class="capt">Structural</span></div>
+          <div class="item"><img src="../public/service-removal.jpg" alt=""><div class="shade"></div><span class="capt">Removals</span></div>
+          <div class="item active"><img src="../public/jordan-climbing.jpeg" alt=""><div class="shade"></div><span class="capt">Subcontracting</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="padding:18px 32px;background:#0e0e28;color:rgba(255,255,255,.5);font-size:13px">Compare with the live cream hero at localhost:3000. Hover the photo strips to expand.</div>
+
+<script>
+  var items=[].slice.call(document.querySelectorAll('.item'));
+  items.forEach(function(el){el.addEventListener('mouseenter',function(){items.forEach(function(x){x.classList.remove('active')});el.classList.add('active')})});
+</script>
+</body>
+</html>

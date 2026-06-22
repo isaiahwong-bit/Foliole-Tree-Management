@@ -190,19 +190,19 @@ export default function QuoteForm() {
     <section id="contact" className="py-24 lg:py-36 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-forest-900 via-forest-950 to-forest-900" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange via-orange to-orange-dark" />
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
               "repeating-linear-gradient(45deg, transparent, transparent 60px, white 60px, white 1px)",
           }}
         />
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-20"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 30% 70%, rgba(249,115,22,0.15) 0%, transparent 50%)",
+              "radial-gradient(circle at 30% 70%, rgba(20,20,56,0.35) 0%, transparent 55%)",
           }}
         />
       </div>
@@ -216,21 +216,14 @@ export default function QuoteForm() {
           viewport={viewportConfig}
           className="text-center mb-12 lg:mb-16"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-12 bg-ember-400" />
-            <span className="text-ember-400 text-sm font-medium tracking-[0.2em] uppercase">
-              Get a Quote
-            </span>
-            <div className="h-px w-12 bg-ember-400" />
-          </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white leading-tight tracking-tight text-balance">
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl font-bold text-white leading-tight tracking-tight text-balance">
             Your trees deserve expert care.
             <br />
-            <span className="text-ember-400">Tell Jordan what you need.</span>
+            <span className="text-navy">Tell Jordan what you need.</span>
           </h2>
 
-          <p className="mt-6 text-lg text-white/60 leading-relaxed max-w-xl mx-auto">
+          <p className="mt-6 text-lg text-white/85 leading-relaxed max-w-xl mx-auto">
             Fill out the form below and Jordan will get back to you with a
             detailed quote. No obligation, no pressure.
           </p>
@@ -250,10 +243,10 @@ export default function QuoteForm() {
                 key="success"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-white/[0.06] backdrop-blur-sm rounded-2xl p-10 lg:p-14 border border-white/10 text-center"
+                className="bg-navy rounded-2xl p-10 lg:p-14 border border-white/10 text-center"
               >
-                <div className="w-16 h-16 rounded-full bg-forest-500/20 flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle size={32} className="text-forest-400" />
+                <div className="w-16 h-16 rounded-full bg-orange/15 flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle size={32} className="text-orange" />
                 </div>
                 <h3 className="text-2xl font-semibold text-white mb-3">
                   Quote request sent
@@ -278,7 +271,7 @@ export default function QuoteForm() {
                       images: [],
                     });
                   }}
-                  className="mt-8 text-sm text-ember-400 hover:text-ember-300 transition-colors"
+                  className="mt-8 text-sm text-orange hover:text-orange-light transition-colors"
                 >
                   Submit another request
                 </button>
@@ -289,7 +282,7 @@ export default function QuoteForm() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 onSubmit={handleSubmit}
-                className="bg-white/[0.06] backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/10 space-y-8"
+                className="bg-navy rounded-2xl p-8 lg:p-10 border border-white/10 space-y-8"
               >
                 {/* Contractor toggle */}
                 <div>
@@ -305,7 +298,7 @@ export default function QuoteForm() {
                       }}
                       className={`flex-1 py-3 px-4 text-sm font-medium transition-all duration-300 ${
                         !formData.isContractor
-                          ? "bg-ember-500 text-white"
+                          ? "bg-orange text-white"
                           : "bg-white/5 text-white/50 hover:text-white/70"
                       }`}
                     >
@@ -319,7 +312,7 @@ export default function QuoteForm() {
                       }}
                       className={`flex-1 py-3 px-4 text-sm font-medium transition-all duration-300 ${
                         formData.isContractor
-                          ? "bg-ember-500 text-white"
+                          ? "bg-orange text-white"
                           : "bg-white/5 text-white/50 hover:text-white/70"
                       }`}
                     >
@@ -332,7 +325,7 @@ export default function QuoteForm() {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="quote-name" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
-                      <User size={14} className="text-ember-400" />
+                      <User size={14} className="text-orange" />
                       Name *
                     </label>
                     <input
@@ -346,12 +339,12 @@ export default function QuoteForm() {
                           ? "Company / contact name"
                           : "Your name"
                       }
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 invalid:border-red-500/50 transition-all text-sm"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-orange/50 focus:ring-1 focus:ring-orange/25 invalid:border-red-500/50 transition-all text-sm"
                     />
                   </div>
                   <div>
                     <label htmlFor="quote-email" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
-                      <Mail size={14} className="text-ember-400" />
+                      <Mail size={14} className="text-orange" />
                       Email *
                     </label>
                     <input
@@ -361,7 +354,7 @@ export default function QuoteForm() {
                       value={formData.email}
                       onChange={(e) => updateField("email", e.target.value)}
                       placeholder="your@email.com"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 invalid:border-red-500/50 transition-all text-sm"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-orange/50 focus:ring-1 focus:ring-orange/25 invalid:border-red-500/50 transition-all text-sm"
                     />
                   </div>
                 </div>
@@ -369,7 +362,7 @@ export default function QuoteForm() {
                 {/* Phone */}
                 <div>
                   <label htmlFor="quote-phone" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
-                    <Phone size={14} className="text-ember-400" />
+                    <Phone size={14} className="text-orange" />
                     Phone
                   </label>
                   <input
@@ -378,7 +371,7 @@ export default function QuoteForm() {
                     value={formData.phone}
                     onChange={(e) => updateField("phone", e.target.value)}
                     placeholder="Optional, but useful for quick follow-up"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 transition-all text-sm"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-orange/50 focus:ring-1 focus:ring-orange/25 transition-all text-sm"
                   />
                 </div>
 
@@ -386,7 +379,7 @@ export default function QuoteForm() {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="quote-location" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
-                      <MapPin size={14} className="text-ember-400" />
+                      <MapPin size={14} className="text-orange" />
                       Location *
                     </label>
                     <input
@@ -396,12 +389,12 @@ export default function QuoteForm() {
                       value={formData.location}
                       onChange={(e) => updateField("location", e.target.value)}
                       placeholder="Suburb or address"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 invalid:border-red-500/50 transition-all text-sm"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-orange/50 focus:ring-1 focus:ring-orange/25 invalid:border-red-500/50 transition-all text-sm"
                     />
                   </div>
                   <div>
                     <label htmlFor="quote-tree-count" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
-                      <TreePine size={14} className="text-ember-400" />
+                      <TreePine size={14} className="text-orange" />
                       Number of trees *
                     </label>
                     <select
@@ -409,27 +402,27 @@ export default function QuoteForm() {
                       required
                       value={formData.treeCount}
                       onChange={(e) => updateField("treeCount", e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 invalid:border-red-500/50 transition-all text-sm appearance-none cursor-pointer"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange/50 focus:ring-1 focus:ring-orange/25 invalid:border-red-500/50 transition-all text-sm appearance-none cursor-pointer"
                     >
-                      <option value="" disabled className="bg-forest-900">
+                      <option value="" disabled className="bg-navy">
                         Select
                       </option>
-                      <option value="1" className="bg-forest-900">
+                      <option value="1" className="bg-navy">
                         1 tree
                       </option>
-                      <option value="2-3" className="bg-forest-900">
+                      <option value="2-3" className="bg-navy">
                         2–3 trees
                       </option>
-                      <option value="4-6" className="bg-forest-900">
+                      <option value="4-6" className="bg-navy">
                         4–6 trees
                       </option>
-                      <option value="7-10" className="bg-forest-900">
+                      <option value="7-10" className="bg-navy">
                         7–10 trees
                       </option>
-                      <option value="10+" className="bg-forest-900">
+                      <option value="10+" className="bg-navy">
                         10+ trees
                       </option>
-                      <option value="large-site" className="bg-forest-900">
+                      <option value="large-site" className="bg-navy">
                         Large site / multiple areas
                       </option>
                     </select>
@@ -439,7 +432,7 @@ export default function QuoteForm() {
                 {/* Service type */}
                 <div>
                   <label htmlFor="quote-service" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
-                    <Wrench size={14} className="text-ember-400" />
+                    <Wrench size={14} className="text-orange" />
                     What work are you looking for? *
                   </label>
                   <select
@@ -449,16 +442,16 @@ export default function QuoteForm() {
                     onChange={(e) =>
                       updateField("serviceType", e.target.value)
                     }
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 invalid:border-red-500/50 transition-all text-sm appearance-none cursor-pointer"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange/50 focus:ring-1 focus:ring-orange/25 invalid:border-red-500/50 transition-all text-sm appearance-none cursor-pointer"
                   >
-                    <option value="" disabled className="bg-forest-900">
+                    <option value="" disabled className="bg-navy">
                       Select a service
                     </option>
                     {currentServices.map((service) => (
                       <option
                         key={service}
                         value={service}
-                        className="bg-forest-900"
+                        className="bg-navy"
                       >
                         {service}
                       </option>
@@ -469,7 +462,7 @@ export default function QuoteForm() {
                 {/* Urgency */}
                 <div>
                   <span className="text-white/80 text-sm font-medium mb-3 flex items-center gap-2">
-                    <Clock size={14} className="text-ember-400" />
+                    <Clock size={14} className="text-orange" />
                     Urgency
                   </span>
                   <div role="radiogroup" aria-label="Urgency" className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -482,7 +475,7 @@ export default function QuoteForm() {
                         onClick={() => updateField("urgency", option.value)}
                         className={`py-3 px-3 rounded-xl text-center transition-all duration-200 border ${
                           formData.urgency === option.value
-                            ? "bg-ember-500/20 border-ember-400/50 text-ember-300"
+                            ? "bg-orange/20 border-orange/50 text-orange-light"
                             : "bg-white/5 border-white/10 text-white/50 hover:border-white/20 hover:text-white/70"
                         }`}
                       >
@@ -500,7 +493,7 @@ export default function QuoteForm() {
                 {/* Description */}
                 <div>
                   <label htmlFor="quote-description" className="text-white/80 text-sm font-medium mb-2 flex items-center gap-2">
-                    <MessageSquare size={14} className="text-ember-400" />
+                    <MessageSquare size={14} className="text-orange" />
                     Tell us more
                   </label>
                   <textarea
@@ -515,14 +508,14 @@ export default function QuoteForm() {
                         : "Describe any concerns, what you'd like done, tree species if known..."
                     }
                     rows={4}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-ember-400/50 focus:ring-1 focus:ring-ember-400/25 transition-all text-sm resize-none"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:border-orange/50 focus:ring-1 focus:ring-orange/25 transition-all text-sm resize-none"
                   />
                 </div>
 
                 {/* Image upload */}
                 <div>
                   <label className="text-white/80 text-sm font-medium mb-3 flex items-center gap-2">
-                    <ImageIcon size={14} className="text-ember-400" />
+                    <ImageIcon size={14} className="text-orange" />
                     Upload photos of your trees
                     <span className="text-white/30 font-normal">
                       (optional, max 5)
@@ -532,11 +525,11 @@ export default function QuoteForm() {
                   {/* Upload zone */}
                   <div
                     onClick={() => fileInputRef.current?.click()}
-                    className="border-2 border-dashed border-white/15 rounded-xl p-6 text-center cursor-pointer hover:border-ember-400/40 transition-colors duration-300 group"
+                    className="border-2 border-dashed border-white/15 rounded-xl p-6 text-center cursor-pointer hover:border-orange/40 transition-colors duration-300 group"
                   >
                     <Upload
                       size={24}
-                      className="mx-auto mb-2 text-white/30 group-hover:text-ember-400/60 transition-colors"
+                      className="mx-auto mb-2 text-white/30 group-hover:text-orange/60 transition-colors"
                     />
                     <p className="text-sm text-white/40 group-hover:text-white/60 transition-colors">
                       Click to upload images
@@ -610,7 +603,7 @@ export default function QuoteForm() {
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full group inline-flex items-center justify-center gap-2 bg-ember-500 text-white px-8 py-4 rounded-full font-semibold text-base hover:bg-ember-400 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300"
+                  className="w-full group inline-flex items-center justify-center gap-2 bg-orange text-white px-8 py-4 rounded-full font-semibold text-base hover:bg-orange disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300"
                 >
                   {status === "submitting" ? (
                     <>

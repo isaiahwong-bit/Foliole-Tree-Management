@@ -8,7 +8,7 @@ import {
   staggerContainer,
   viewportConfig,
 } from "@/lib/animations";
-import { Award, BookOpen, Leaf, ShieldCheck, Zap } from "lucide-react";
+import { Award, BookOpen, Leaf, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import Image from "next/image";
 
 const credentials = [
@@ -37,6 +37,11 @@ const credentials = [
     title: "Fully Insured",
     detail: "Comprehensive public liability coverage for total peace of mind",
   },
+  {
+    icon: Sparkles,
+    title: "Property Respect",
+    detail: "Clean sites, protected gardens, and no damage. Your property is left better than we found it",
+  },
 ];
 
 export default function About() {
@@ -60,7 +65,7 @@ export default function About() {
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-950/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent" />
             </div>
 
             {/* Floating experience badge */}
@@ -71,10 +76,10 @@ export default function About() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute right-2 sm:-right-4 bottom-8 sm:bottom-12 bg-white rounded-xl p-4 sm:p-5 shadow-xl border-l-4 border-ember-400"
+              className="absolute right-2 sm:-right-4 bottom-8 sm:bottom-12 bg-white rounded-xl p-4 sm:p-5 shadow-xl border-l-4 border-orange"
             >
-              <p className="text-2xl font-bold text-forest-900">500+</p>
-              <p className="text-xs text-forest-700/70 mt-0.5">
+              <p className="text-2xl font-bold text-navy">500+</p>
+              <p className="text-xs text-navy/70 mt-0.5">
                 Trees
                 <br />
                 managed
@@ -82,7 +87,7 @@ export default function About() {
             </motion.div>
 
             {/* Decorative accent */}
-            <div className="absolute -z-10 -top-4 -left-4 w-full h-full rounded-2xl border-2 border-ember-200/30" />
+            <div className="absolute -z-10 -top-4 -left-4 w-full h-full rounded-2xl border-2 border-orange-light/30" />
           </motion.div>
 
           {/* Right: content about Jordan */}
@@ -92,28 +97,22 @@ export default function About() {
             whileInView="visible"
             viewport={viewportConfig}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-12 bg-ember-400" />
-              <span className="text-ember-500 text-sm font-medium tracking-[0.2em] uppercase">
-                Meet Jordan
-              </span>
-            </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-forest-950 leading-tight tracking-tight text-balance">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-navy leading-tight tracking-tight text-balance">
               The arborist
               <br />
               behind every project
             </h2>
 
-            <p className="mt-6 text-lg text-forest-800/70 leading-relaxed">
-              When you hire Foliole, you&apos;re hiring Jordan. Not a sales team,
+            <p className="mt-6 text-lg text-navy/70 leading-relaxed">
+              When you hire LumberJord, you&apos;re hiring Jordan. Not a sales team,
               not a call centre, not a rotating roster. With years of
               professional arboriculture experience across Melbourne and greater
               Victoria, Jordan is the one who assesses your trees, plans the
               work, and gets it done at height with the care of a qualified
               tradesman.
             </p>
-            <p className="mt-4 text-forest-800/65 leading-relaxed">
+            <p className="mt-4 text-navy/65 leading-relaxed">
               Disciplined safety protocols, genuine trade knowledge, and
               hands-on experience. Every climb is methodical. Every cut is
               deliberate. Every site is left immaculate. Whether sub-contracting
@@ -135,18 +134,18 @@ export default function About() {
                   variants={fadeInUp}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-ember-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-9 h-9 rounded-lg bg-orange/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <item.icon
                       size={16}
-                      className="text-ember-500"
+                      className="text-orange"
                       strokeWidth={1.5}
                     />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-forest-950">
+                    <p className="text-sm font-semibold text-navy">
                       {item.title}
                     </p>
-                    <p className="text-sm text-forest-800/55 mt-0.5">
+                    <p className="text-sm text-navy/55 mt-0.5">
                       {item.detail}
                     </p>
                   </div>

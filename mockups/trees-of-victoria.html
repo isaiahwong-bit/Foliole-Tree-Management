@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LumberJord — Victoria's iconic trees</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{ --navy:#141438; --orange:#F15F3A; --blue:#3B4D82; --olive:#62542B; --offwhite:#EEEBE8; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Rubik",system-ui,sans-serif;background:var(--offwhite);color:var(--navy);-webkit-font-smoothing:antialiased}
+  h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.05}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+  section{padding:90px 0}
+
+  .head{text-align:center;max-width:680px;margin:0 auto 56px}
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--orange);font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px}
+  .eyebrow .rule{height:2px;width:34px;background:var(--orange)}
+  .head h2{font-size:42px;margin-bottom:16px}
+  .head p{color:rgba(20,20,56,.62);font-size:18px;line-height:1.6}
+
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 1px 3px rgba(20,20,56,.06);transition:transform .4s ease, box-shadow .4s ease;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(20,20,56,.14)}
+  .photo{position:relative;height:230px;overflow:hidden}
+  .photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .card:hover .photo img{transform:scale(1.06)}
+  .photo .grad{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(20,20,56,.55))}
+  .photo .latin{position:absolute;left:18px;bottom:14px;color:#fff;font-style:italic;font-size:13px;opacity:.9}
+  .num{position:absolute;top:14px;left:16px;width:30px;height:30px;border-radius:999px;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+
+  .body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .body h3{font-size:21px;margin-bottom:10px}
+  .fact{color:rgba(20,20,56,.66);font-size:14px;line-height:1.55;margin-bottom:16px;flex:1}
+  .note{border-top:1px solid rgba(20,20,56,.1);padding-top:14px;display:flex;gap:9px;align-items:flex-start}
+  .note .dot{width:7px;height:7px;border-radius:99px;background:var(--orange);margin-top:6px;flex:0 0 auto}
+  .note p{font-size:13px;line-height:1.5;color:rgba(20,20,56,.7)}
+  .note b{color:var(--navy);font-weight:700}
+
+  @media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.grid{grid-template-columns:1fr}.head h2{font-size:32px}}
+</style>
+</head>
+<body>
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow"><span class="rule"></span>Field Notes</div>
+        <h2>Victoria's iconic trees</h2>
+        <p>Four of the trees Jordan works with across Melbourne and greater Victoria — what makes each remarkable, and what they need to thrive.</p>
+      </div>
+
+      <div class="grid">
+        <!-- 1 -->
+        <div class="card">
+          <div class="photo">
+            <span class="num">1</span>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop" alt="Mountain Ash forest" />
+            <div class="grad"></div>
+            <span class="latin">Eucalyptus regnans</span>
+          </div>
+          <div class="body">
+            <h3>Mountain Ash</h3>
+            <p class="fact">The tallest flowering plant on Earth. In Victoria's Central Highlands the best specimens push past 90 metres — among the tallest trees anywhere.</p>
+            <div class="note"><span class="dot"></span><p><b>Jordan's note:</b> Towering heights mean only experienced climbers should work them — and they regenerate from fire, so timing matters.</p></div>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="card">
+          <div class="photo">
+            <span class="num">2</span>
+            <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=1200&auto=format&fit=crop" alt="River Red Gum by water" />
+            <div class="grad"></div>
+            <span class="latin">Eucalyptus camaldulensis</span>
+          </div>
+          <div class="body">
+            <h3>River Red Gum</h3>
+            <p class="fact">Lines the Murray and Victoria's waterways and can live 500–1,000 years. Australia's most widespread eucalypt.</p>
+            <div class="note"><span class="dot"></span><p><b>Jordan's note:</b> Famous for dropping heavy limbs without warning — regular health and risk assessment is essential near homes.</p></div>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="card">
+          <div class="photo">
+            <span class="num">3</span>
+            <img src="https://images.unsplash.com/photo-1418489098061-ce87b5dc3aee?q=80&w=1200&auto=format&fit=crop" alt="Snow Gum in the alps" />
+            <div class="grad"></div>
+            <span class="latin">Eucalyptus pauciflora</span>
+          </div>
+          <div class="body">
+            <h3>Snow Gum</h3>
+            <p class="fact">The sculptural survivor of the Victorian Alps — twisted, multi-coloured trunks that shrug off snow and temperatures below -10°C.</p>
+            <div class="note"><span class="dot"></span><p><b>Jordan's note:</b> Slow-growing and long-lived; prized as ornamentals, they reward careful formative pruning.</p></div>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="card">
+          <div class="photo">
+            <span class="num">4</span>
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop" alt="Manna Gum" />
+            <div class="grad"></div>
+            <span class="latin">Eucalyptus viminalis</span>
+          </div>
+          <div class="body">
+            <h3>Manna Gum</h3>
+            <p class="fact">A favourite koala food tree that sheds bark in long ribbons and weeps a sweet, edible "manna" — the source of its name.</p>
+            <div class="note"><span class="dot"></span><p><b>Jordan's note:</b> Shedding ribbons and habitat value shape how and when it should be pruned — wildlife first.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
