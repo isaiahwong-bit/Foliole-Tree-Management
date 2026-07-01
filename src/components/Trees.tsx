@@ -9,44 +9,40 @@ import {
 
 const trees: CarouselSlide[] = [
   {
-    title: "Mountain Ash",
-    subtitle: "Eucalyptus regnans · Central Highlands",
+    title: "London Plane",
+    subtitle: "Platanus × acerifolia · Melbourne's avenues",
     description:
-      "The tallest flowering plant on Earth. Victoria's Central Highlands grow specimens past 90 metres, among the tallest trees anywhere. Their height demands experienced climbers, and because they regenerate from fire, timing every cut matters.",
+      "Melbourne's most-planted street tree, prized for its pollution tolerance and dense summer shade. Its fine leaf hairs irritate airways in spring and its vigorous surface roots love to lift footpaths, so thoughtful pruning and root management matter.",
     accent: "#F15F3A",
-    imageUrl:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1000&h=1200&fit=crop&q=80",
-    imageAlt: "Towering Mountain Ash forest",
+    imageUrl: "/trees/london-plane.jpg",
+    imageAlt: "Avenue of London Plane trees arching over an urban street",
   },
   {
-    title: "River Red Gum",
-    subtitle: "Eucalyptus camaldulensis · Murray & waterways",
+    title: "Jacaranda",
+    subtitle: "Jacaranda mimosifolia · Streets in bloom",
     description:
-      "Australia's most widespread eucalypt lines Victoria's rivers and can live 500–1,000 years. It's famous for dropping heavy limbs without warning, which is exactly why regular health and risk assessment matters when one stands near a home.",
+      "The purple showstopper of late spring, and a brittle-wooded one. Formative pruning while young builds strong branch unions that resist storm limb failure, and a quick clean-up keeps flower-slicked paths safe.",
     accent: "#3B4D82",
-    imageUrl:
-      "https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1000&h=1200&fit=crop&q=80",
-    imageAlt: "River Red Gum beside water",
+    imageUrl: "/trees/jacaranda.jpg",
+    imageAlt: "Urban street lined with jacarandas in full purple bloom",
   },
   {
-    title: "Snow Gum",
-    subtitle: "Eucalyptus pauciflora · Victorian Alps",
+    title: "Gum Trees",
+    subtitle: "Eucalyptus · Melbourne's natives",
     description:
-      "The sculptural survivor of the Victorian Alps, with twisted, multi-coloured trunks that shrug off snow and temperatures well below freezing. Slow-growing and long-lived, prized as ornamentals, they reward patient formative pruning.",
+      "Australia's iconic natives, and the ones to respect. Even healthy gums can drop large limbs without warning on hot, still days, so regular crown inspection and deadwood removal are essential wherever one stands near paths, cars or homes.",
     accent: "#62542B",
-    imageUrl:
-      "https://images.unsplash.com/photo-1418489098061-ce87b5dc3aee?w=1000&h=1200&fit=crop&q=80",
-    imageAlt: "Snow Gum with twisted trunk in alpine country",
+    imageUrl: "/trees/gum.jpg",
+    imageAlt: "Tall eucalyptus gum tree against a blue sky",
   },
   {
-    title: "Manna Gum",
-    subtitle: "Eucalyptus viminalis · Koala country",
+    title: "Crepe Myrtle",
+    subtitle: "Lagerstroemia indica · Suburban gardens",
     description:
-      "A favourite koala food tree that sheds bark in long ribbons and weeps a sweet, edible 'manna', the source of its name. Its habitat value and shedding habit shape how and when it should be pruned: wildlife first.",
+      "A favourite small street and garden tree with smooth, mottled bark and long summer colour. The trick is to avoid 'crepe murder' (hard topping) and thin selectively instead, keeping a clean framework and good airflow against mildew.",
     accent: "#141438",
-    imageUrl:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1000&h=1200&fit=crop&q=80",
-    imageAlt: "Manna Gum in open woodland",
+    imageUrl: "/trees/crepe-myrtle.jpg",
+    imageAlt: "Pink-flowering crepe myrtle on a suburban street",
   },
 ];
 
@@ -63,11 +59,11 @@ export default function Trees() {
           className="text-center max-w-2xl mx-auto mb-12 lg:mb-16"
         >
           <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl font-bold text-navy leading-tight tracking-tight text-balance">
-            Victoria&apos;s iconic trees
+            The trees we work with
           </h2>
           <p className="mt-6 text-lg text-navy/60 leading-relaxed">
-            Four of the trees Jordan works with across Melbourne and greater
-            Victoria: what makes each remarkable, and what it needs to thrive.
+            The species Jordan sees most across Melbourne&apos;s streets, parks
+            and gardens, and what each one needs to thrive.
           </p>
         </motion.div>
 

@@ -32,8 +32,8 @@ function AccordionPanel({
       onFocus={onActivate}
       onClick={onActivate}
       aria-label={item.title}
-      className={`relative h-[360px] sm:h-[440px] lg:h-[480px] rounded-2xl overflow-hidden cursor-pointer flex-shrink-0 transition-[width] duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2 focus-visible:ring-offset-offwhite ${
-        isActive ? "w-[260px] sm:w-[320px] lg:w-[360px]" : "w-[52px] sm:w-[60px]"
+      className={`relative h-[300px] sm:h-[420px] lg:h-[460px] min-w-0 rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2 focus-visible:ring-offset-offwhite ${
+        isActive ? "flex-[3.5]" : "flex-[1]"
       }`}
     >
       <Image
@@ -72,7 +72,7 @@ export function ImageAccordion({
   const [activeIndex, setActiveIndex] = useState(defaultActiveIndex);
 
   return (
-    <div className="flex flex-row items-center justify-center gap-2.5 sm:gap-3.5 overflow-x-auto">
+    <div className="flex w-full items-stretch gap-2 sm:gap-3">
       {items.map((item, index) => (
         <AccordionPanel
           key={item.id}
