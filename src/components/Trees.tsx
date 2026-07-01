@@ -18,13 +18,13 @@ const trees: CarouselSlide[] = [
     imageAlt: "Avenue of London Plane trees arching over an urban street",
   },
   {
-    title: "Jacaranda",
-    subtitle: "Jacaranda mimosifolia · Streets in bloom",
+    title: "Elm",
+    subtitle: "Ulmus · Melbourne's grand avenues",
     description:
-      "The purple showstopper of late spring, and a brittle-wooded one. Formative pruning while young builds strong branch unions that resist storm limb failure, and a quick clean-up keeps flower-slicked paths safe.",
-    accent: "#3B4D82",
-    imageUrl: "/trees/jacaranda.jpg",
-    imageAlt: "Urban street lined with jacarandas in full purple bloom",
+      "Melbourne shelters one of the world's last great elm populations, lost to Dutch elm disease almost everywhere else. These broad, arching giants line Royal Parade and the city's gardens. They need careful large-limb reduction to manage their weight, and year-round vigilance against elm leaf beetle.",
+    accent: "#3F5E3C",
+    imageUrl: "/trees/elm.jpg",
+    imageAlt: "Broad elm canopy arching over a Melbourne avenue",
   },
   {
     title: "Gum Trees",
@@ -36,13 +36,13 @@ const trees: CarouselSlide[] = [
     imageAlt: "Tall eucalyptus gum tree against a blue sky",
   },
   {
-    title: "Crepe Myrtle",
-    subtitle: "Lagerstroemia indica · Suburban gardens",
+    title: "Claret Ash",
+    subtitle: "Fraxinus 'Raywood' · Autumn colour",
     description:
-      "A favourite small street and garden tree with smooth, mottled bark and long summer colour. The trick is to avoid 'crepe murder' (hard topping) and thin selectively instead, keeping a clean framework and good airflow against mildew.",
-    accent: "#141438",
-    imageUrl: "/trees/crepe-myrtle.jpg",
-    imageAlt: "Pink-flowering crepe myrtle on a suburban street",
+      "The street tree behind Melbourne's deep-red autumns. Its fast, eager growth comes at a cost: narrow, included-bark forks that split in storms. Formative pruning while young builds strong branch unions, and selective thinning keeps the canopy sound as it matures.",
+    accent: "#7A2E3A",
+    imageUrl: "/trees/claret-ash.jpg",
+    imageAlt: "Claret ash in deep-red autumn colour on a suburban street",
   },
 ];
 

@@ -117,6 +117,38 @@ export default function Footer() {
             </a>
           </div>
         </div>
+
+        {/* Photo credits */}
+        <p className="mt-4 text-white/20 text-[11px] leading-relaxed">
+          Elm avenue photo &copy;{" "}
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Avenue_of_Elms,_Fitzroy_Gardens,_Melbourne_Australia_(4523703561).jpg"
+            className="hover:text-white/40 transition-colors"
+            rel="nofollow noopener"
+            target="_blank"
+          >
+            Rexness
+          </a>{" "}
+          &middot; claret ash photo &copy;{" "}
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Gunnersbury_Park,_autumn_leaves,_claret_ash_tree_-_geograph.org.uk_-_6640116.jpg"
+            className="hover:text-white/40 transition-colors"
+            rel="nofollow noopener"
+            target="_blank"
+          >
+            David Hawgood
+          </a>
+          , licensed under{" "}
+          <a
+            href="https://creativecommons.org/licenses/by-sa/2.0/"
+            className="hover:text-white/40 transition-colors"
+            rel="nofollow noopener"
+            target="_blank"
+          >
+            CC BY-SA 2.0
+          </a>
+          .
+        </p>
       </div>
     </motion.footer>
   );
