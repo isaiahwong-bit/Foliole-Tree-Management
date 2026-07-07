@@ -49,8 +49,8 @@ const homeownerServices: Gallery4Item[] = [
 const subcontractingServices: Gallery4Item[] = [
   {
     id: "complex-climb",
-    image: "/work/complex-canopy-cut.jpg",
-    imageAlt: "Chainsaw work deep inside a dense cypress canopy",
+    image: "/work/crown-limb-work.jpg",
+    imageAlt: "Jordan making a chainsaw cut high in a bare winter crown against blue sky",
     title: "Complex Climb Operations",
     description:
       "High-level climbing support for operations beyond standard scope: advanced rigging and dismantling, multi-stem and hazardous removals, crane-assisted and high-risk access work.",

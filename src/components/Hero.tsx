@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/interactive-image-accordion";
 
 const services: ImageAccordionItem[] = [
-  { id: "pruning", title: "Pruning", imageUrl: "/work/pruning-canopy.jpg", href: "#services" },
+  { id: "pruning", title: "Pruning", imageUrl: "/work/winter-pruning.jpg", href: "#services" },
   { id: "health", title: "Tree Health", imageUrl: "/work/canopy-dieback.jpg", href: "#services" },
   { id: "structural", title: "Structural Support", imageUrl: "/work/rigging-limbs.jpg", href: "#services" },
   { id: "removal", title: "Tree Removals", imageUrl: "/work/stem-dismantle.jpg", href: "#services" },

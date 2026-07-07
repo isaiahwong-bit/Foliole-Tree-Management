@@ -32,8 +32,8 @@ const trees: CarouselSlide[] = [
     description:
       "Australia's icons, and an enormous family in their own right — river reds, spotted gums, lemon-scenteds and many more, each with its own character. Look for ribboning or smooth bark, long sickle-shaped hanging leaves, and that unmistakable eucalyptus scent after rain.",
     accent: "#62542B",
-    imageUrl: "/trees/gum.jpg",
-    imageAlt: "Tall eucalyptus gum tree against a blue sky",
+    imageUrl: "/trees/gum-canopy.jpg",
+    imageAlt: "Looking up the pale trunks of tall gum trees into the canopy",
   },
   {
     title: "Claret Ash",

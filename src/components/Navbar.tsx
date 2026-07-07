@@ -58,7 +58,7 @@ export default function Navbar() {
               width={329}
               height={40}
               priority
-              className="h-6 sm:h-7 lg:h-7 w-auto"
+              className="h-5 sm:h-7 lg:h-7 w-auto"
             />
           </a>
 
@@ -81,16 +81,25 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden relative z-10 p-2 text-navy transition-colors"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-menu"
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile: quote CTA stays visible at all times + menu button */}
+          <div className="lg:hidden relative z-10 flex items-center gap-1.5">
+            <a
+              href="#contact"
+              onClick={() => setMobileOpen(false)}
+              className="whitespace-nowrap text-xs font-semibold px-3.5 py-2 rounded-full bg-orange text-navy hover:bg-orange-light transition-colors"
+            >
+              Get a Quote
+            </a>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 text-navy transition-colors"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </nav>
       </m.header>
 
