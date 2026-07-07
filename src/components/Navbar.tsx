@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
@@ -28,14 +28,21 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = "";
     }
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    if (mobileOpen) window.addEventListener("keydown", onKeyDown);
+
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [mobileOpen]);
 
   return (
     <>
-      <motion.header
+      <m.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -44,7 +51,7 @@ export default function Navbar() {
         }`}
       >
         <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-18 lg:h-20">
-          <a href="#" className="relative z-10 flex items-center" aria-label="LumberJord home">
+          <a href="/" className="relative z-10 flex items-center" aria-label="LumberJord home">
             <Image
               src="/brand/lj-secondary-navy.png"
               alt="LumberJord"
@@ -68,7 +75,7 @@ export default function Navbar() {
             ))}
             <a
               href="#contact"
-              className="text-sm font-semibold px-6 py-2.5 rounded-full bg-orange text-white hover:bg-orange-dark transition-all duration-300"
+              className="text-sm font-semibold px-6 py-2.5 rounded-full bg-orange text-navy hover:bg-orange-light transition-all duration-300"
             >
               Get a Quote
             </a>
@@ -79,23 +86,26 @@ export default function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden relative z-10 p-2 text-navy transition-colors"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </nav>
-      </motion.header>
+      </m.header>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
+          <m.div
+            id="mobile-menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-offwhite"
           >
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
@@ -115,12 +125,12 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 text-lg font-semibold px-8 py-3 rounded-full bg-orange text-white hover:bg-orange-dark transition-colors"
+                className="mt-4 text-lg font-semibold px-8 py-3 rounded-full bg-orange text-navy hover:bg-orange-light transition-colors"
               >
                 Get a Quote
               </a>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

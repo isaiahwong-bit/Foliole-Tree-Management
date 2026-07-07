@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   fadeInUp,
   slideInLeft,
@@ -50,7 +50,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left: Jordan's real photo */}
-          <motion.div
+          <m.div
             variants={slideInLeft}
             initial="hidden"
             whileInView="visible"
@@ -69,7 +69,7 @@ export default function About() {
             </div>
 
             {/* Floating experience badge */}
-            <motion.div
+            <m.div
               animate={{ y: [-6, 6, -6] }}
               transition={{
                 duration: 5,
@@ -84,14 +84,14 @@ export default function About() {
                 <br />
                 managed
               </p>
-            </motion.div>
+            </m.div>
 
             {/* Decorative accent */}
             <div className="absolute -z-10 -top-4 -left-4 w-full h-full rounded-2xl border-2 border-orange-light/30" />
-          </motion.div>
+          </m.div>
 
           {/* Right: content about Jordan */}
-          <motion.div
+          <m.div
             variants={slideInRight}
             initial="hidden"
             whileInView="visible"
@@ -121,7 +121,7 @@ export default function About() {
             </p>
 
             {/* Credentials */}
-            <motion.div
+            <m.div
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
@@ -129,7 +129,7 @@ export default function About() {
               className="mt-10 grid sm:grid-cols-2 gap-5"
             >
               {credentials.map((item, i) => (
-                <motion.div
+                <m.div
                   key={i}
                   variants={fadeInUp}
                   className="flex items-start gap-3"
@@ -145,14 +145,14 @@ export default function About() {
                     <p className="text-sm font-semibold text-navy">
                       {item.title}
                     </p>
-                    <p className="text-sm text-navy/55 mt-0.5">
+                    <p className="text-sm text-navy/70 mt-0.5">
                       {item.detail}
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         </div>
       </div>
     </section>

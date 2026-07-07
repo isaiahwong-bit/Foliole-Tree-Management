@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   fadeInUp,
   staggerContainer,
@@ -44,7 +44,7 @@ export default function Process() {
     <section id="process" className="py-24 lg:py-36 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -56,10 +56,10 @@ export default function Process() {
             <br className="hidden sm:block" />
             from enquiry to completion
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Steps */}
-        <motion.div
+        <m.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -71,7 +71,7 @@ export default function Process() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {steps.map((item, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 variants={fadeInUp}
                 className="relative text-center lg:text-left"
@@ -85,7 +85,7 @@ export default function Process() {
                         strokeWidth={1.5}
                       />
                     </div>
-                    <span className="absolute -top-2 -right-3 text-xs font-bold text-orange bg-orange/10 px-2 py-0.5 rounded-full border border-orange-light">
+                    <span className="absolute -top-2 -right-3 text-xs font-bold text-navy bg-orange px-2 py-0.5 rounded-full border border-orange-light">
                       {item.step}
                     </span>
                   </div>
@@ -93,14 +93,14 @@ export default function Process() {
                   <h3 className="text-lg font-semibold text-navy mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-navy/60 leading-relaxed text-sm">
+                  <p className="text-navy/70 leading-relaxed text-sm">
                     {item.description}
                   </p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

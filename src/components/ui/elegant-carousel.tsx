@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback } from "react";
+import Image from "next/image";
+import { useInView, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export interface CarouselSlide {
@@ -22,18 +24,21 @@ const TRANSITION_DURATION = 800;
 export function ElegantCarousel({ slides }: ElegantCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const progressRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+
+  // Autoplay only while the carousel is actually on screen, and never for
+  // users who prefer reduced motion.
+  const isInView = useInView(containerRef, { amount: 0.3 });
+  const reducedMotion = useReducedMotion();
+  const autoplay = isInView && !isPaused && !reducedMotion;
 
   const goToSlide = useCallback(
     (index: number) => {
       if (isTransitioning || index === currentIndex) return;
       setIsTransitioning(true);
-      setProgress(0);
       setTimeout(() => {
         setCurrentIndex(index);
         setTimeout(() => setIsTransitioning(false), 50);
@@ -50,21 +55,6 @@ export function ElegantCarousel({ slides }: ElegantCarouselProps) {
     goToSlide((currentIndex - 1 + slides.length) % slides.length);
   }, [currentIndex, goToSlide, slides.length]);
 
-  useEffect(() => {
-    if (isPaused) return;
-
-    progressRef.current = setInterval(() => {
-      setProgress((prev) => (prev >= 100 ? 100 : prev + 100 / (SLIDE_DURATION / 50)));
-    }, 50);
-
-    intervalRef.current = setInterval(goNext, SLIDE_DURATION);
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-      if (progressRef.current) clearInterval(progressRef.current);
-    };
-  }, [currentIndex, isPaused, goNext]);
-
   const handleTouchEnd = () => {
     const diff = touchStartX.current - touchEndX.current;
     if (Math.abs(diff) > 60) {
@@ -80,9 +70,19 @@ export function ElegantCarousel({ slides }: ElegantCarouselProps) {
 
   return (
     <div
+      ref={containerRef}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Tree species we work with"
       className="relative overflow-hidden rounded-3xl"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+          setIsPaused(false);
+        }
+      }}
       onTouchStart={(e) => (touchStartX.current = e.targetTouches[0].clientX)}
       onTouchMove={(e) => (touchEndX.current = e.targetTouches[0].clientX)}
       onTouchEnd={handleTouchEnd}
@@ -97,12 +97,12 @@ export function ElegantCarousel({ slides }: ElegantCarouselProps) {
 
       <div className="relative grid lg:grid-cols-2 gap-10 lg:gap-16 items-center p-6 sm:p-10 lg:p-14">
         {/* Left: text */}
-        <div className="order-2 lg:order-1">
+        <div className="order-2 lg:order-1" aria-live="polite">
           <div
             className={`flex items-center gap-3 mb-5 transition-all duration-500 ${shift}`}
           >
             <span className="h-px w-10 bg-navy/30" />
-            <span className="text-navy/50 text-sm font-medium tracking-[0.2em]">
+            <span className="text-navy/65 text-sm font-medium tracking-[0.2em]">
               {String(currentIndex + 1).padStart(2, "0")} /{" "}
               {String(slides.length).padStart(2, "0")}
             </span>
@@ -122,7 +122,7 @@ export function ElegantCarousel({ slides }: ElegantCarouselProps) {
           </p>
 
           <p
-            className={`mt-6 text-navy/65 text-base sm:text-lg leading-relaxed max-w-lg transition-all duration-500 ${shift}`}
+            className={`mt-6 text-navy/70 text-base sm:text-lg leading-relaxed max-w-lg transition-all duration-500 ${shift}`}
           >
             {slide.description}
           </p>
@@ -131,14 +131,14 @@ export function ElegantCarousel({ slides }: ElegantCarouselProps) {
             <button
               onClick={goPrev}
               aria-label="Previous tree"
-              className="flex size-11 items-center justify-center rounded-full border border-navy/20 text-navy transition-colors hover:bg-navy hover:text-white"
+              className="flex size-11 items-center justify-center rounded-full border border-navy/20 text-navy transition-colors hover:bg-navy hover:text-white focus-visible:outline-2 focus-visible:outline-orange"
             >
               <ArrowLeft className="size-5" />
             </button>
             <button
               onClick={goNext}
               aria-label="Next tree"
-              className="flex size-11 items-center justify-center rounded-full border border-navy/20 text-navy transition-colors hover:bg-navy hover:text-white"
+              className="flex size-11 items-center justify-center rounded-full border border-navy/20 text-navy transition-colors hover:bg-navy hover:text-white focus-visible:outline-2 focus-visible:outline-orange"
             >
               <ArrowRight className="size-5" />
             </button>
@@ -152,12 +152,16 @@ export function ElegantCarousel({ slides }: ElegantCarouselProps) {
               isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"
             }`}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={slide.imageUrl}
-              alt={slide.imageAlt ?? slide.title}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            {slides.map((s, index) => (
+              <Image
+                key={s.imageUrl}
+                src={s.imageUrl}
+                alt={s.imageAlt ?? s.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className={`object-cover ${index === currentIndex ? "" : "hidden"}`}
+              />
+            ))}
             <div
               className="absolute inset-0"
               style={{
@@ -184,28 +188,40 @@ export function ElegantCarousel({ slides }: ElegantCarouselProps) {
             key={s.title}
             onClick={() => goToSlide(index)}
             aria-label={`Go to ${s.title}`}
-            className="group text-left"
+            aria-current={index === currentIndex}
+            className="group text-left focus-visible:outline-2 focus-visible:outline-orange rounded"
           >
             <div className="h-0.5 w-full rounded-full bg-navy/15 overflow-hidden">
-              <div
-                className="h-full rounded-full transition-all duration-100 ease-linear"
-                style={{
-                  width:
-                    index === currentIndex
-                      ? `${progress}%`
-                      : index < currentIndex
-                        ? "100%"
-                        : "0%",
-                  backgroundColor:
-                    index === currentIndex ? slide.accent : "rgba(20,20,56,0.25)",
-                }}
-              />
+              {index === currentIndex ? (
+                // CSS animation drives both the bar and the auto-advance —
+                // no JS polling. Paused whenever autoplay conditions fail.
+                <div
+                  key={`progress-${currentIndex}`}
+                  onAnimationEnd={goNext}
+                  className="h-full rounded-full"
+                  style={{
+                    backgroundColor: slide.accent,
+                    width: autoplay ? undefined : "100%",
+                    animation: autoplay
+                      ? `carousel-progress ${SLIDE_DURATION}ms linear forwards`
+                      : "none",
+                  }}
+                />
+              ) : (
+                <div
+                  className="h-full rounded-full"
+                  style={{
+                    width: index < currentIndex ? "100%" : "0%",
+                    backgroundColor: "rgba(20,20,56,0.25)",
+                  }}
+                />
+              )}
             </div>
             <span
               className={`mt-2 block text-xs tracking-tight transition-colors ${
                 index === currentIndex
                   ? "text-navy font-semibold"
-                  : "text-navy/45 group-hover:text-navy/70"
+                  : "text-navy/60 group-hover:text-navy/80"
               }`}
             >
               {s.title}

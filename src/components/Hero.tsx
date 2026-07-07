@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import {
@@ -35,40 +34,24 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-12 items-center">
-          {/* Left: copy */}
+          {/* Left: copy — CSS entrance so the LCP paints before hydration */}
           <div className="max-w-xl">
-
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.05] tracking-tight text-balance"
-            >
+            <h1 className="animate-rise animate-rise-1 font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.05] tracking-tight text-balance">
               Tree care,
               <br />
               <span className="text-orange">done properly</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="mt-6 sm:mt-8 text-base sm:text-lg text-navy/65 leading-relaxed max-w-lg"
-            >
+            <p className="animate-rise animate-rise-2 mt-6 sm:mt-8 text-base sm:text-lg text-navy/70 leading-relaxed max-w-lg">
               LumberJord is a climbing arborist servicing Melbourne and greater
               Victoria with a hands-on approach to arboriculture. Focused on tree
               health, best-practice end-to-end services, and innovation.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4"
-            >
+            <div className="animate-rise animate-rise-3 mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href="#contact"
-                className="group inline-flex items-center justify-center gap-2 bg-orange text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-sm sm:text-base hover:bg-orange-dark transition-all duration-300"
+                className="group inline-flex items-center justify-center gap-2 bg-orange text-navy px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-sm sm:text-base hover:bg-orange-light transition-all duration-300"
               >
                 Get a Free Quote
                 <ArrowRight
@@ -82,14 +65,9 @@ export default function Hero() {
               >
                 Our Services
               </a>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="mt-10 sm:mt-12 flex flex-wrap gap-x-8 gap-y-3 text-xs sm:text-sm text-navy/55"
-            >
+            <div className="animate-rise animate-rise-4 mt-10 sm:mt-12 flex flex-wrap gap-x-8 gap-y-3 text-xs sm:text-sm text-navy/70">
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0" />
                 Melbourne Based
@@ -98,17 +76,13 @@ export default function Hero() {
                 <span className="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0" />
                 Fully Insured
               </span>
-            </motion.div>
+            </div>
           </div>
 
           {/* Right: interactive image accordion */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
+          <div className="animate-rise animate-rise-2">
             <ImageAccordion items={services} defaultActiveIndex={4} />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

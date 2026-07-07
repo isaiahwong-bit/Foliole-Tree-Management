@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
+import MotionProvider from "@/components/MotionProvider";
 import "./globals.css";
 
 const rubik = Rubik({
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${siteUrl}/jordan-climbing.jpeg`,
+        url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "Jordan from LumberJord, professional arborist climbing a large tree in Melbourne",
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
     title: "LumberJord | Professional Arborist, Melbourne",
     description:
       "Melbourne-based qualified arborist. Tree health, pruning, removals, and subcontracting across greater Victoria.",
-    images: [`${siteUrl}/jordan-climbing.jpeg`],
+    images: [`${siteUrl}/og-image.jpg`],
   },
   other: {
     "geo.region": "AU-VIC",
@@ -92,7 +93,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-AU" className={rubik.variable}>
-      <body className="font-body overflow-x-hidden">{children}</body>
+      <body className="font-body overflow-x-hidden">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

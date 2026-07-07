@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { fadeIn, viewportConfig } from "@/lib/animations";
 import Image from "next/image";
 
@@ -22,7 +22,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <motion.footer
+    <m.footer
       variants={fadeIn}
       initial="hidden"
       whileInView="visible"
@@ -42,7 +42,7 @@ export default function Footer() {
                 className="h-7 w-auto"
               />
             </div>
-            <p className="text-white/40 text-sm leading-relaxed max-w-sm">
+            <p className="text-white/60 text-sm leading-relaxed max-w-sm">
               Melbourne-based professional arboriculture by Jordan. Qualified
               tree care, risk assessment, and subcontracting across Melbourne
               and greater Victoria.
@@ -51,7 +51,7 @@ export default function Footer() {
               <span className="text-3xl font-bold text-orange tracking-tight">
                 500+
               </span>
-              <span className="text-white/45 text-sm">
+              <span className="text-white/60 text-sm">
                 trees managed across Melbourne &amp; greater Victoria
               </span>
             </div>
@@ -59,15 +59,15 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4 tracking-wide uppercase">
+            <h3 className="text-white text-sm font-semibold mb-4 tracking-wide uppercase">
               Services
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link, i) => (
                 <li key={i}>
                   <a
                     href={link.href}
-                    className="text-white/40 text-sm hover:text-orange-light transition-colors duration-200"
+                    className="text-white/60 text-sm hover:text-orange-light transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -78,15 +78,15 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4 tracking-wide uppercase">
+            <h3 className="text-white text-sm font-semibold mb-4 tracking-wide uppercase">
               Company
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link, i) => (
                 <li key={i}>
                   <a
                     href={link.href}
-                    className="text-white/40 text-sm hover:text-orange-light transition-colors duration-200"
+                    className="text-white/60 text-sm hover:text-orange-light transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -98,20 +98,20 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/25 text-xs">
+          <p className="text-white/50 text-xs">
             &copy; {new Date().getFullYear()} LumberJord. All
             rights reserved.
           </p>
           <div className="flex gap-6">
             <a
               href="/privacy"
-              className="text-white/25 text-xs hover:text-white/50 transition-colors"
+              className="text-white/50 text-xs hover:text-white/80 transition-colors"
             >
               Privacy Policy
             </a>
             <a
               href="/terms"
-              className="text-white/25 text-xs hover:text-white/50 transition-colors"
+              className="text-white/50 text-xs hover:text-white/80 transition-colors"
             >
               Terms of Service
             </a>
@@ -119,11 +119,11 @@ export default function Footer() {
         </div>
 
         {/* Photo credits */}
-        <p className="mt-4 text-white/20 text-[11px] leading-relaxed">
+        <p className="mt-4 text-white/45 text-[11px] leading-relaxed">
           Elm avenue photo &copy;{" "}
           <a
             href="https://commons.wikimedia.org/wiki/File:Avenue_of_Elms,_Fitzroy_Gardens,_Melbourne_Australia_(4523703561).jpg"
-            className="hover:text-white/40 transition-colors"
+            className="hover:text-white/70 transition-colors"
             rel="nofollow noopener"
             target="_blank"
           >
@@ -132,7 +132,7 @@ export default function Footer() {
           &middot; claret ash photo &copy;{" "}
           <a
             href="https://commons.wikimedia.org/wiki/File:Gunnersbury_Park,_autumn_leaves,_claret_ash_tree_-_geograph.org.uk_-_6640116.jpg"
-            className="hover:text-white/40 transition-colors"
+            className="hover:text-white/70 transition-colors"
             rel="nofollow noopener"
             target="_blank"
           >
@@ -141,7 +141,7 @@ export default function Footer() {
           , licensed under{" "}
           <a
             href="https://creativecommons.org/licenses/by-sa/2.0/"
-            className="hover:text-white/40 transition-colors"
+            className="hover:text-white/70 transition-colors"
             rel="nofollow noopener"
             target="_blank"
           >
@@ -150,6 +150,6 @@ export default function Footer() {
           .
         </p>
       </div>
-    </motion.footer>
+    </m.footer>
   );
 }

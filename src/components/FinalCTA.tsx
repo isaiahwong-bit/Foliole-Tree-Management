@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { fadeInUp, viewportConfig } from "@/lib/animations";
 import { ArrowRight } from "lucide-react";
 
@@ -8,7 +8,7 @@ export default function FinalCTA() {
   return (
     <section id="cta" className="py-16 lg:py-24 bg-offwhite">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -30,7 +30,7 @@ export default function FinalCTA() {
               <br />
               <span className="text-navy">trees sorted.</span>
             </h2>
-            <p className="mt-5 text-lg text-white/85 leading-relaxed max-w-xl mx-auto">
+            <p className="mt-5 text-lg text-navy/85 leading-relaxed max-w-xl mx-auto">
               Whether you need a single assessment or an ongoing management
               partner, Jordan is here to help. No obligation, no pressure.
             </p>
@@ -47,7 +47,7 @@ export default function FinalCTA() {
               </a>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

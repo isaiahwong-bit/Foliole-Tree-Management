@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { fadeInUp, viewportConfig } from "@/lib/animations";
 import { Gallery4, type Gallery4Item } from "@/components/ui/gallery4";
 
@@ -90,7 +90,7 @@ export default function Solution() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-navy rounded-[2rem] lg:rounded-[2.5rem] px-6 sm:px-10 lg:px-16 py-16 lg:py-20">
         {/* Header */}
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -102,15 +102,15 @@ export default function Solution() {
             <br className="hidden sm:block" />
             every level of need
           </h2>
-          <p className="mt-6 text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
             Whether you&apos;re a property owner seeking expert tree care or an
             industry professional needing reliable subcontracting support,
             Jordan delivers the same standard of work.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Category Toggle */}
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -120,30 +120,32 @@ export default function Solution() {
           <div className="inline-flex w-full sm:w-auto rounded-xl overflow-hidden border border-white/15 bg-white/5 backdrop-blur-sm">
             <button
               onClick={() => setActiveCategory("homeowner")}
+              aria-pressed={activeCategory === "homeowner"}
               className={`flex-1 sm:flex-none px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5 text-xs sm:text-sm font-medium transition-all duration-300 ${
                 activeCategory === "homeowner"
-                  ? "bg-orange text-white"
-                  : "text-white/50 hover:text-white/70"
+                  ? "bg-orange text-navy font-semibold"
+                  : "text-white/60 hover:text-white/85"
               }`}
             >
               Homeowner & Commercial
             </button>
             <button
               onClick={() => setActiveCategory("subcontracting")}
+              aria-pressed={activeCategory === "subcontracting"}
               className={`flex-1 sm:flex-none px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5 text-xs sm:text-sm font-medium transition-all duration-300 ${
                 activeCategory === "subcontracting"
-                  ? "bg-orange text-white"
-                  : "text-white/50 hover:text-white/70"
+                  ? "bg-orange text-navy font-semibold"
+                  : "text-white/60 hover:text-white/85"
               }`}
             >
               Subcontracting & Partnership
             </button>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Service carousel */}
         <AnimatePresence mode="wait">
-          <motion.div
+          <m.div
             key={activeCategory}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -151,7 +153,7 @@ export default function Solution() {
             transition={{ duration: 0.4 }}
           >
             <Gallery4 items={services} tone="light" />
-          </motion.div>
+          </m.div>
         </AnimatePresence>
         </div>
       </div>

@@ -2,12 +2,12 @@ export default function JsonLd() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://lumberjord.com.au",
+    "@id": "https://lumberjord.com.au/#business",
     name: "LumberJord",
     description:
       "Melbourne-based qualified arborist. Professional tree care including pruning to AS 4373, tree health diagnostics, structural support, removals, and subcontracting across Melbourne and greater Victoria.",
     url: "https://lumberjord.com.au",
-    image: "https://lumberjord.com.au/jordan-climbing.jpeg",
+    image: "https://lumberjord.com.au/og-image.jpg",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
@@ -94,12 +94,6 @@ export default function JsonLd() {
           },
         },
       ],
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: "3",
-      bestRating: "5",
     },
   };
 

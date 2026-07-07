@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { fadeInUp, viewportConfig } from "@/lib/animations";
 import {
   ElegantCarousel,
@@ -51,7 +51,7 @@ export default function Trees() {
     <section id="trees" className="py-24 lg:py-36 bg-offwhite">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -61,21 +61,21 @@ export default function Trees() {
           <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl font-bold text-navy leading-tight tracking-tight text-balance">
             The trees we work with
           </h2>
-          <p className="mt-6 text-lg text-navy/60 leading-relaxed">
+          <p className="mt-6 text-lg text-navy/70 leading-relaxed">
             The species Jordan sees most across Melbourne&apos;s streets, parks
             and gardens, and what each one needs to thrive.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Carousel */}
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
           viewport={viewportConfig}
         >
           <ElegantCarousel slides={trees} />
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

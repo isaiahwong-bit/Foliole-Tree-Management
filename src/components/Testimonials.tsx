@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { fadeInUp, viewportConfig } from "@/lib/animations";
 import Image from "next/image";
 import {
@@ -41,8 +41,9 @@ export default function Testimonials() {
       <div className="absolute inset-0 -z-10">
         <Image
           src="/testimonials-bg.jpg"
-          alt="Sunlight filtering through dark tree branches and leaves"
+          alt=""
           fill
+          quality={45}
           className="object-cover"
           sizes="100vw"
         />
@@ -58,7 +59,7 @@ export default function Testimonials() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -70,7 +71,7 @@ export default function Testimonials() {
             <br className="hidden sm:block" />
             and industry professionals
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Auto-scrolling testimonial columns */}
         <div className="flex justify-center gap-6 max-h-[560px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)]">

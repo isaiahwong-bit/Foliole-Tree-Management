@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   fadeInUp,
   staggerContainer,
@@ -31,7 +31,7 @@ const guarantees = [
 
 export default function Guarantee() {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="guarantee" className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-navy" />
 
@@ -55,7 +55,7 @@ export default function Guarantee() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -65,15 +65,15 @@ export default function Guarantee() {
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white leading-tight tracking-tight text-balance">
             Commitment to quality
           </h2>
-          <p className="mt-6 text-lg text-white/55 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
             Whether you&apos;re a homeowner trusting someone with your property
             or a company putting your reputation on the line, you need to know
             the person in the canopy holds themselves to the same standard you do.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Guarantee Cards */}
-        <motion.div
+        <m.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -81,7 +81,7 @@ export default function Guarantee() {
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {guarantees.map((item, i) => (
-            <motion.div
+            <m.div
               key={i}
               variants={fadeInUp}
               className="group relative bg-white/[0.06] backdrop-blur-sm rounded-2xl p-8 lg:p-9 border border-white/10 hover:border-orange/30 transition-all duration-300"
@@ -98,29 +98,29 @@ export default function Guarantee() {
               <h3 className="text-lg font-semibold text-white mb-3">
                 {item.title}
               </h3>
-              <p className="text-white/55 leading-relaxed text-[15px]">
+              <p className="text-white/70 leading-relaxed text-[15px]">
                 {item.description}
               </p>
 
               {/* Bottom accent line */}
               <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-orange/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Personal reassurance */}
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
           viewport={viewportConfig}
           className="mt-16 text-center"
         >
-          <p className="text-white/40 text-sm max-w-lg mx-auto leading-relaxed">
+          <p className="text-white/60 text-sm max-w-lg mx-auto leading-relaxed">
             Jordan personally stands behind every job. If it&apos;s not right,
             it gets fixed. That&apos;s not a policy. It&apos;s how the business runs.
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

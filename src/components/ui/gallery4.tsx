@@ -28,11 +28,11 @@ export function Gallery4({
 }: Gallery4Props) {
   const isLight = tone === "light";
   const arrowBtn = isLight
-    ? "border-white/25 text-white hover:bg-white hover:text-navy disabled:hover:bg-transparent disabled:hover:text-white"
-    : "border-navy/20 text-navy hover:bg-navy hover:text-white disabled:hover:bg-transparent disabled:hover:text-navy";
+    ? "border-white/45 text-white hover:bg-white hover:text-navy disabled:hover:bg-transparent disabled:hover:text-white"
+    : "border-navy/30 text-navy hover:bg-navy hover:text-white disabled:hover:bg-transparent disabled:hover:text-navy";
   const dotInactive = isLight
-    ? "bg-white/25 hover:bg-white/50"
-    : "bg-navy/20 hover:bg-navy/40";
+    ? "bg-white/45 hover:bg-white/70"
+    : "bg-navy/30 hover:bg-navy/50";
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     containScroll: "trimSnaps",

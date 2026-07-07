@@ -81,9 +81,14 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   body {
@@ -110,5 +115,51 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* CSS-only hero entrance — paints before JS hydrates, so the LCP
+     elements are never blocked on the framer-motion bundle. */
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .animate-rise {
+    animation: rise-in 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .animate-rise-1 {
+    animation-delay: 0.05s;
+  }
+  .animate-rise-2 {
+    animation-delay: 0.18s;
+  }
+  .animate-rise-3 {
+    animation-delay: 0.3s;
+  }
+  .animate-rise-4 {
+    animation-delay: 0.45s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-rise {
+      animation: none;
+    }
+  }
+
+  /* Drives the Trees carousel progress bar without a JS interval. */
+  @keyframes carousel-progress {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
   }
 }

@@ -38,10 +38,12 @@ function AccordionPanel({
     >
       <Image
         src={item.imageUrl}
-        alt={item.title}
+        alt=""
         fill
         priority={priority}
-        sizes="(max-width: 768px) 60vw, 360px"
+        sizes={
+          isActive ? "(max-width: 768px) 70vw, 420px" : "(max-width: 768px) 20vw, 140px"
+        }
         className="object-cover"
       />
       {/* Gradient for caption legibility */}
@@ -51,7 +53,7 @@ function AccordionPanel({
         className={`absolute left-1/2 font-heading font-semibold text-white whitespace-nowrap transition-all duration-300 ease-in-out ${
           isActive
             ? "bottom-5 -translate-x-1/2 rotate-0 text-lg"
-            : "bottom-24 -translate-x-1/2 rotate-90 text-base"
+            : "hidden sm:block bottom-24 -translate-x-1/2 rotate-90 text-base"
         }`}
       >
         {item.title}
