@@ -38,3 +38,7 @@ next-env.d.ts
 
 # brand source archive (extracted into LumberJord/)
 /LumberJord.zip
+
+# Raw photo/video source material (geotagged originals live here — never commit)
+Images/
+public/films-draft/
