@@ -696,6 +696,18 @@ export default function QuoteForm() {
                     className="hidden"
                   />
 
+                  <p className="mt-2 text-xs text-white/60">
+                    Not sure what species you have? No need to identify it —
+                    clear photos are all Jordan needs. Curious anyway? See the{" "}
+                    <a
+                      href="#trees"
+                      className="text-orange-light hover:text-orange underline underline-offset-2 transition-colors"
+                    >
+                      common Melbourne trees
+                    </a>{" "}
+                    above.
+                  </p>
+
                   {/* Rejected-file feedback */}
                   <p aria-live="polite" className="mt-2 text-xs text-orange-light">
                     {uploadNotice}

@@ -23,8 +23,8 @@ export default function Home() {
         <About />
         <Testimonials />
         <FinalCTA />
-        <Trees />
         <Guarantee />
+        <Trees />
         <QuoteForm />
       </main>
       <Footer />

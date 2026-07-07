@@ -12,7 +12,7 @@ const trees: CarouselSlide[] = [
     title: "London Plane",
     subtitle: "Platanus × acerifolia · Melbourne's avenues",
     description:
-      "Melbourne's most-planted street tree, prized for its pollution tolerance and dense summer shade. Its fine leaf hairs irritate airways in spring and its vigorous surface roots love to lift footpaths, so thoughtful pruning and root management matter.",
+      "Melbourne's most-planted street tree, arching over avenues across the inner suburbs. Pick it by its mottled cream-and-olive bark that flakes away in patches, broad maple-like leaves, and the spiky seed balls that hang on through winter — hay fever sufferers know its fine spring leaf-hairs all too well.",
     accent: "#F15F3A",
     imageUrl: "/trees/london-plane.jpg",
     imageAlt: "Avenue of London Plane trees arching over an urban street",
@@ -21,7 +21,7 @@ const trees: CarouselSlide[] = [
     title: "Elm",
     subtitle: "Ulmus · Melbourne's grand avenues",
     description:
-      "Melbourne shelters one of the world's last great elm populations, lost to Dutch elm disease almost everywhere else. These broad, arching giants line Royal Parade and the city's gardens. They need careful large-limb reduction to manage their weight, and year-round vigilance against elm leaf beetle.",
+      "Melbourne shelters one of the world's last great elm populations, lost to Dutch elm disease almost everywhere else. They line Royal Parade and the city's historic gardens. Look for the broad, arching canopy, deeply furrowed bark, and small saw-edged leaves that sit slightly lopsided at the base.",
     accent: "#3F5E3C",
     imageUrl: "/trees/elm.jpg",
     imageAlt: "Broad elm canopy arching over a Melbourne avenue",
@@ -30,7 +30,7 @@ const trees: CarouselSlide[] = [
     title: "Gum Trees",
     subtitle: "Eucalyptus · Melbourne's natives",
     description:
-      "Australia's iconic natives, and the ones to respect. Even healthy gums can drop large limbs without warning on hot, still days, so regular crown inspection and deadwood removal are essential wherever one stands near paths, cars or homes.",
+      "Australia's icons, and an enormous family in their own right — river reds, spotted gums, lemon-scenteds and many more, each with its own character. Look for ribboning or smooth bark, long sickle-shaped hanging leaves, and that unmistakable eucalyptus scent after rain.",
     accent: "#62542B",
     imageUrl: "/trees/gum.jpg",
     imageAlt: "Tall eucalyptus gum tree against a blue sky",
@@ -39,7 +39,7 @@ const trees: CarouselSlide[] = [
     title: "Claret Ash",
     subtitle: "Fraxinus 'Raywood' · Autumn colour",
     description:
-      "The street tree behind Melbourne's deep-red autumns. Its fast, eager growth comes at a cost: narrow, included-bark forks that split in storms. Formative pruning while young builds strong branch unions, and selective thinning keeps the canopy sound as it matures.",
+      "The tree behind Melbourne's deep-red autumns — a cultivar raised in Australia before it went global. Its fine, feathery leaflets turn rich claret every autumn. Like many fast growers it can form tight, 'included bark' branch unions, which is one reason formative pruning while a tree is young is time well spent.",
     accent: "#7A2E3A",
     imageUrl: "/trees/claret-ash.jpg",
     imageAlt: "Claret ash in deep-red autumn colour on a suburban street",
@@ -59,11 +59,20 @@ export default function Trees() {
           className="text-center max-w-2xl mx-auto mb-12 lg:mb-16"
         >
           <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl font-bold text-navy leading-tight tracking-tight text-balance">
-            The trees we work with
+            Know what&apos;s growing at your place
           </h2>
           <p className="mt-6 text-lg text-navy/70 leading-relaxed">
-            The species Jordan sees most across Melbourne&apos;s streets, parks
-            and gardens, and what each one needs to thrive.
+            A quick guide to the trees Jordan sees most across Melbourne&apos;s
+            streets, parks and gardens. Put a name to yours if you can — and if
+            you can&apos;t, no problem: a couple of photos in the{" "}
+            <a
+              href="#contact"
+              className="text-orange-dark hover:text-orange underline underline-offset-2 transition-colors"
+            >
+              quote form
+            </a>{" "}
+            is all Jordan needs to identify it. Every tree is different, so
+            what yours needs is always assessed in person.
           </p>
         </m.div>
 
