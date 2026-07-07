@@ -8,6 +8,7 @@ export default function JsonLd() {
       "Melbourne-based qualified arborist. Professional tree care including pruning to AS 4373, tree health diagnostics, structural support, removals, and subcontracting across Melbourne and greater Victoria.",
     url: "https://lumberjord.com.au",
     image: "https://lumberjord.com.au/og-image.jpg",
+    telephone: "+61413268827",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",

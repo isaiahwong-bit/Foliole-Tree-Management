@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { m, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
@@ -50,7 +50,7 @@ export default function Navbar() {
           scrolled ? "bg-offwhite/90 backdrop-blur-xl shadow-sm" : "bg-transparent"
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-18 lg:h-20">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-18 lg:h-20">
           <a href="/" className="relative z-10 flex items-center" aria-label="LumberJord home">
             <Image
               src="/brand/lj-secondary-navy.png"
@@ -74,6 +74,13 @@ export default function Navbar() {
               </a>
             ))}
             <a
+              href="tel:+61413268827"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy hover:text-orange-dark transition-colors duration-300"
+            >
+              <Phone size={15} aria-hidden="true" />
+              0413 268 827
+            </a>
+            <a
               href="#contact"
               className="text-sm font-semibold px-6 py-2.5 rounded-full bg-orange text-navy hover:bg-orange-light transition-all duration-300"
             >
@@ -81,12 +88,19 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile: quote CTA stays visible at all times + menu button */}
-          <div className="lg:hidden relative z-10 flex items-center gap-1.5">
+          {/* Mobile: call + quote stay visible at all times + menu button */}
+          <div className="lg:hidden relative z-10 flex items-center gap-1">
+            <a
+              href="tel:+61413268827"
+              aria-label="Call LumberJord on 0413 268 827"
+              className="flex size-8 items-center justify-center rounded-full border border-navy/30 text-navy hover:bg-navy/5 transition-colors"
+            >
+              <Phone size={15} aria-hidden="true" />
+            </a>
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="whitespace-nowrap text-xs font-semibold px-3.5 py-2 rounded-full bg-orange text-navy hover:bg-orange-light transition-colors"
+              className="whitespace-nowrap text-xs font-semibold px-3 py-2 rounded-full bg-orange text-navy hover:bg-orange-light transition-colors"
             >
               Get a Quote
             </a>
@@ -137,6 +151,14 @@ export default function Navbar() {
                 className="mt-4 text-lg font-semibold px-8 py-3 rounded-full bg-orange text-navy hover:bg-orange-light transition-colors"
               >
                 Get a Quote
+              </a>
+              <a
+                href="tel:+61413268827"
+                onClick={() => setMobileOpen(false)}
+                className="inline-flex items-center gap-2 text-lg font-medium text-navy/80 hover:text-orange transition-colors"
+              >
+                <Phone size={18} aria-hidden="true" />
+                Call 0413 268 827
               </a>
             </m.div>
           </m.div>

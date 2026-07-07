@@ -2,7 +2,7 @@
 
 import { m } from "framer-motion";
 import { fadeInUp, viewportConfig } from "@/lib/animations";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 
 export default function FinalCTA() {
   return (
@@ -34,7 +34,7 @@ export default function FinalCTA() {
               Whether you need a single assessment or an ongoing management
               partner, Jordan is here to help. No obligation, no pressure.
             </p>
-            <div className="mt-9 flex justify-center">
+            <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <a
                 href="#contact"
                 className="group inline-flex items-center justify-center gap-2 bg-navy text-white px-8 py-4 rounded-full font-semibold text-base hover:bg-navy-light transition-all duration-300"
@@ -44,6 +44,13 @@ export default function FinalCTA() {
                   size={18}
                   className="group-hover:translate-x-1 transition-transform"
                 />
+              </a>
+              <a
+                href="tel:+61413268827"
+                className="inline-flex items-center justify-center gap-2 border-2 border-navy/60 text-navy px-8 py-[14px] rounded-full font-semibold text-base hover:bg-navy hover:text-white transition-all duration-300"
+              >
+                <Phone size={18} aria-hidden="true" />
+                0413 268 827
               </a>
             </div>
           </div>

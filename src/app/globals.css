@@ -83,6 +83,9 @@
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Clip pre-animation transform overflow (slide-in sections) so mobile
+       browsers never widen the layout viewport and zoom the page out. */
+    overflow-x: clip;
   }
 
   @media (prefers-reduced-motion: no-preference) {

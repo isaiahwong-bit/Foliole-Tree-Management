@@ -622,6 +622,21 @@ export default function QuoteForm() {
                       </label>
                     ))}
                   </div>
+                  <p aria-live="polite" className="mt-3 text-sm text-orange-light">
+                    {formData.urgency === "emergency" && (
+                      <>
+                        For immediate safety concerns, skip the form and call
+                        Jordan now on{" "}
+                        <a
+                          href="tel:+61413268827"
+                          className="font-semibold underline underline-offset-2 hover:text-orange transition-colors"
+                        >
+                          0413 268 827
+                        </a>
+                        .
+                      </>
+                    )}
+                  </p>
                 </fieldset>
 
                 {/* Description */}

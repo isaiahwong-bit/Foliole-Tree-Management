@@ -67,7 +67,17 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="animate-rise animate-rise-4 mt-10 sm:mt-12 flex flex-wrap gap-x-8 gap-y-3 text-xs sm:text-sm text-navy/70">
+            <p className="animate-rise animate-rise-4 mt-5 text-sm text-navy/70">
+              Prefer to talk?{" "}
+              <a
+                href="tel:+61413268827"
+                className="font-semibold text-navy underline decoration-orange decoration-2 underline-offset-4 hover:text-orange-dark transition-colors"
+              >
+                Call 0413 268 827
+              </a>
+            </p>
+
+            <div className="animate-rise animate-rise-4 mt-8 sm:mt-10 flex flex-wrap gap-x-8 gap-y-3 text-xs sm:text-sm text-navy/70">
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0" />
                 Melbourne Based

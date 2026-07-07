@@ -47,6 +47,12 @@ export default function Footer() {
               tree care, risk assessment, and subcontracting across Melbourne
               and greater Victoria.
             </p>
+            <a
+              href="tel:+61413268827"
+              className="mt-5 inline-block text-white/80 text-sm font-semibold hover:text-orange-light transition-colors"
+            >
+              0413 268 827
+            </a>
             <div className="mt-6 flex items-baseline gap-2.5">
               <span className="text-3xl font-bold text-orange tracking-tight">
                 500+
