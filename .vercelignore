@@ -1,0 +1,8 @@
+# Raw source / personal photos — not used by the site build
+Images/
+
+# Draft brand-motion assets (Higgsfield exports) — not referenced by the site
+public/films-draft/
+
+# Brand source archive
+LumberJord.zip

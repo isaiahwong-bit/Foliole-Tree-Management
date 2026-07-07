@@ -162,4 +162,57 @@
       width: 100%;
     }
   }
+
+  /* Page loader — the brandmark climbing his rope. CSS-only so it paints
+     on first frame, before framer-motion hydrates. */
+  @keyframes lj-climb {
+    0%,
+    100% {
+      transform: translateY(9%);
+    }
+    40% {
+      transform: translateY(-7%);
+    }
+    55% {
+      transform: translateY(-7%);
+    }
+  }
+
+  .animate-climb {
+    animation: lj-climb 1.3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    will-change: transform;
+  }
+
+  @keyframes lj-loading-dots {
+    0% {
+      content: "";
+    }
+    25% {
+      content: ".";
+    }
+    50% {
+      content: "..";
+    }
+    75% {
+      content: "...";
+    }
+    100% {
+      content: "";
+    }
+  }
+
+  .loading-dots::after {
+    content: "";
+    animation: lj-loading-dots 1.5s steps(4, end) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-climb {
+      animation: none;
+    }
+    .loading-dots::after {
+      animation: none;
+      content: "…";
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import MotionProvider from "@/components/MotionProvider";
+import PageLoader from "@/components/PageLoader";
 import "./globals.css";
 
 const rubik = Rubik({
@@ -94,6 +95,7 @@ export default function RootLayout({
   return (
     <html lang="en-AU" className={rubik.variable}>
       <body className="font-body overflow-x-hidden">
+        <PageLoader />
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
