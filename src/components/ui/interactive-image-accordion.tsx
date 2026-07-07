@@ -13,9 +13,10 @@ export interface ImageAccordionItem {
 interface AccordionPanelProps {
   item: ImageAccordionItem;
   isActive: boolean;
-  /** Hover-capable (desktop) panels are links; touch panels just expand. */
+  /** Hover-capable (desktop) panels are links; touch panels expand first. */
   asLink: boolean;
   onActivate: () => void;
+  onNavigate: () => void;
   priority?: boolean;
 }
 
@@ -24,16 +25,27 @@ function AccordionPanel({
   isActive,
   asLink,
   onActivate,
+  onNavigate,
   priority,
 }: AccordionPanelProps) {
   const Wrapper = asLink && item.href ? "a" : "div";
+
+  // Touch: first tap expands the panel, a second tap on the expanded panel
+  // goes through to the services section. Desktop anchors navigate natively.
+  const handleClick = () => {
+    if (!asLink && isActive) {
+      onNavigate();
+      return;
+    }
+    onActivate();
+  };
 
   return (
     <Wrapper
       href={asLink ? item.href : undefined}
       onMouseEnter={onActivate}
       onFocus={onActivate}
-      onClick={onActivate}
+      onClick={handleClick}
       aria-label={asLink ? item.title : undefined}
       className={`relative h-[300px] sm:h-[420px] lg:h-[460px] min-w-0 rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2 focus-visible:ring-offset-offwhite ${
         isActive ? "flex-[3.5]" : "flex-[1]"
@@ -60,6 +72,12 @@ function AccordionPanel({
         }`}
       >
         {item.title}
+        {/* Touch affordance: the expanded panel is one more tap from services */}
+        {!asLink && isActive && (
+          <span aria-hidden="true" className="ml-1.5 text-orange-light">
+            &rsaquo;
+          </span>
+        )}
       </span>
     </Wrapper>
   );
@@ -78,8 +96,7 @@ export function ImageAccordion({
 
   // On touch devices a scroll gesture over a panel can register as a tap,
   // and a tap on a link yanks the page to #services mid-scroll. So panels
-  // are only links when the device can actually hover (mouse/trackpad);
-  // on touch, tapping simply expands the panel.
+  // are only links when the device can actually hover (mouse/trackpad).
   const [canHover, setCanHover] = useState(false);
   useEffect(() => {
     const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
@@ -88,6 +105,16 @@ export function ImageAccordion({
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
+
+  // Scroll to the target without writing a #hash into the URL, so reloads
+  // still land on the hero.
+  const navigateTo = (href?: string) => {
+    if (!href?.startsWith("#")) return;
+    const target = document.querySelector(href);
+    if (!target) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+  };
 
   return (
     <div className="flex w-full items-stretch gap-2 sm:gap-3">
@@ -98,6 +125,7 @@ export function ImageAccordion({
           isActive={index === activeIndex}
           asLink={canHover}
           onActivate={() => setActiveIndex(index)}
+          onNavigate={() => navigateTo(item.href)}
           priority={index === defaultActiveIndex}
         />
       ))}

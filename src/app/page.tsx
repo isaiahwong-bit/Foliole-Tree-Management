@@ -10,11 +10,13 @@ import Guarantee from "@/components/Guarantee";
 import QuoteForm from "@/components/QuoteForm";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import ScrollReset from "@/components/ScrollReset";
 
 export default function Home() {
   return (
     <>
       <JsonLd />
+      <ScrollReset />
       <Navbar />
       <main>
         <Hero />
