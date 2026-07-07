@@ -59,8 +59,8 @@ export default function About() {
           >
             <div className="aspect-[4/5] rounded-2xl relative overflow-hidden">
               <Image
-                src="/jordan-climbing.jpeg"
-                alt="Jordan climbing a massive tree in full safety harness and hi-vis gear"
+                src="/work/jordan-canopy-selfie.jpg"
+                alt="Jordan smiling in helmet and harness at the top of a tall gum tree"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"

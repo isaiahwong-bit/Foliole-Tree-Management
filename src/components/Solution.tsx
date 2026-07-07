@@ -10,8 +10,8 @@ type ServiceCategory = "homeowner" | "subcontracting";
 const homeownerServices: Gallery4Item[] = [
   {
     id: "pruning",
-    image: "/service-pruning.jpg",
-    imageAlt: "Arborist with harness and saw performing precision tree pruning",
+    image: "/work/roofline-pruning.jpg",
+    imageAlt: "Jordan pruning branches overhanging a tiled roof, working from ropes",
     title: "Pruning",
     description:
       "Pruning to Australian Standards (AS 4373): dead wood removal, weight reduction, formative pruning, and canopy restoration. We strengthen your trees’ structure while improving light, airflow, and natural form.",
@@ -19,8 +19,8 @@ const homeownerServices: Gallery4Item[] = [
   },
   {
     id: "tree-health",
-    image: "/service-tree-health.jpg",
-    imageAlt: "Massive specimen tree with exposed root system in a park setting",
+    image: "/work/tree-assessment.jpg",
+    imageAlt: "Mature cypress with sections of canopy dieback under assessment",
     title: "Tree Health & Diagnostics",
     description:
       "Identifying decay, disease, root stress, and structural issues before they become emergencies. Decay detection, visual inspections, soil and root analysis: informed care plans, not guesswork.",
@@ -28,8 +28,8 @@ const homeownerServices: Gallery4Item[] = [
   },
   {
     id: "structural",
-    image: "/service-structural.jpg",
-    imageAlt: "Looking up at the large structural branches of a mature tree",
+    image: "/work/limb-rigging-close.jpg",
+    imageAlt: "Arborist rigging ropes among the structural limbs of a conifer",
     title: "Structural Support",
     description:
       "Cabling and bracing for trees that need structural reinforcement. Structural assessment and load reduction that preserves valuable trees safely and extends their lifespan.",
@@ -37,8 +37,8 @@ const homeownerServices: Gallery4Item[] = [
   },
   {
     id: "removals",
-    image: "/service-removal.jpg",
-    imageAlt: "Arborist performing safe tree removal with proper equipment",
+    image: "/work/canopy-topping.jpg",
+    imageAlt: "Climber dismantling the top of a conifer high above a rooftop",
     title: "Tree Removals",
     description:
       "Safe, methodical tree removals for when a tree needs to come down. Confined-space and complex removals, sectional dismantling, and stump grinding, fully insured and site-sensitive.",
@@ -49,8 +49,8 @@ const homeownerServices: Gallery4Item[] = [
 const subcontractingServices: Gallery4Item[] = [
   {
     id: "complex-climb",
-    image: "/service-removal.jpg",
-    imageAlt: "Arborist climbing high in a tree canopy with safety equipment",
+    image: "/work/complex-canopy-cut.jpg",
+    imageAlt: "Chainsaw work deep inside a dense cypress canopy",
     title: "Complex Climb Operations",
     description:
       "High-level climbing support for operations beyond standard scope: advanced rigging and dismantling, multi-stem and hazardous removals, crane-assisted and high-risk access work.",
@@ -58,8 +58,8 @@ const subcontractingServices: Gallery4Item[] = [
   },
   {
     id: "decay-assessment",
-    image: "/service-tree-health.jpg",
-    imageAlt: "Massive specimen tree with exposed root system in a park setting",
+    image: "/work/decay-assessment.jpg",
+    imageAlt: "Full crown of a mature cypress showing deadwood against the sky",
     title: "Decay Detection & Assessment",
     description:
       "Identifying structural issues, decay, and risk factors in the canopy. Visual tree assessment (VTA), decay detection and mapping, and pre-work evaluations that inform the right course of action.",
@@ -67,8 +67,8 @@ const subcontractingServices: Gallery4Item[] = [
   },
   {
     id: "capacity",
-    image: "/service-pruning.jpg",
-    imageAlt: "Arborist with harness performing precision tree work",
+    image: "/work/job-complete-logs.jpg",
+    imageAlt: "Logs stacked neatly beside a house after a completed removal",
     title: "Capacity & Partnership",
     description:
       "Reliable overflow support and ongoing partnership for tree management companies: surge capacity, municipal and council contract work, compliance documentation, and retainer arrangements.",
