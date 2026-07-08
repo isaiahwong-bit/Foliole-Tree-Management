@@ -43,8 +43,11 @@ function AccordionPanel({
   return (
     <Wrapper
       href={asLink ? item.href : undefined}
-      onMouseEnter={onActivate}
-      onFocus={onActivate}
+      // Touch browsers synthesize mouseenter from a tap, which would
+      // activate the panel before its own click lands and turn the first
+      // tap into a navigation. Hover/focus only activate on hover devices.
+      onMouseEnter={asLink ? onActivate : undefined}
+      onFocus={asLink ? onActivate : undefined}
       onClick={handleClick}
       aria-label={asLink ? item.title : undefined}
       className={`relative h-[300px] sm:h-[420px] lg:h-[460px] min-w-0 rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2 focus-visible:ring-offset-offwhite ${
