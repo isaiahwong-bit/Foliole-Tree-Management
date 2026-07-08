@@ -68,10 +68,12 @@ function AccordionPanel({
       <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent" />
 
       <span
-        className={`absolute left-1/2 font-heading font-semibold text-white whitespace-nowrap transition-all duration-300 ease-in-out ${
+        className={`absolute left-1/2 font-heading font-semibold text-white transition-all duration-300 ease-in-out ${
           isActive
-            ? "bottom-5 -translate-x-1/2 rotate-0 text-lg"
-            : "hidden sm:block bottom-24 -translate-x-1/2 rotate-90 text-base"
+            ? // Phones: smaller type, centred, wraps within the panel so long
+              // titles like "Structural Support" never clip.
+              "bottom-4 sm:bottom-5 -translate-x-1/2 rotate-0 text-base sm:text-lg leading-tight text-center whitespace-normal w-[calc(100%-0.75rem)] sm:w-auto sm:whitespace-nowrap"
+            : "hidden sm:block bottom-24 -translate-x-1/2 rotate-90 text-base whitespace-nowrap"
         }`}
       >
         {item.title}
