@@ -61,12 +61,20 @@ export default function Footer() {
               assessment, and subcontracting across Melbourne&apos;s bayside
               and inner-eastern suburbs.
             </p>
-            <a
-              href="tel:+61413268827"
-              className="mt-5 inline-block text-white/80 text-sm font-semibold hover:text-orange-light transition-colors"
-            >
-              0413 268 827
-            </a>
+            <div className="mt-5 flex flex-col gap-1.5">
+              <a
+                href="tel:+61413268827"
+                className="inline-block text-white/80 text-sm font-semibold hover:text-orange-light transition-colors"
+              >
+                0413 268 827
+              </a>
+              <a
+                href="mailto:admin@lumberjord.com.au"
+                className="inline-block text-white/70 text-sm hover:text-orange-light transition-colors"
+              >
+                admin@lumberjord.com.au
+              </a>
+            </div>
             <div className="mt-6 flex items-baseline gap-2.5">
               <span className="text-3xl font-bold text-orange tracking-tight">
                 500+

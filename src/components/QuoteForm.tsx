@@ -10,6 +10,7 @@ import {
 } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { fadeInUp, viewportConfig } from "@/lib/animations";
+import { trackEvent } from "@/components/Analytics";
 import {
   ArrowRight,
   Upload,
@@ -231,6 +232,7 @@ export default function QuoteForm() {
       }
 
       setStatus("success");
+      trackEvent("generate_lead", { form: "quote" });
     } catch (err) {
       setStatus("error");
       setErrorMessage(

@@ -11,6 +11,7 @@ export default function JsonLd() {
     url: "https://lumberjord.com.au",
     image: "https://lumberjord.com.au/og-image.jpg",
     telephone: "+61413268827",
+    email: "admin@lumberjord.com.au",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
