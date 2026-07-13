@@ -15,29 +15,33 @@ const siteUrl = "https://lumberjord.com.au";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "LumberJord | Professional Arborist & Tree Care, Melbourne",
+    default: "LumberJord | Arborist for Melbourne's Bayside & Inner East",
     template: "%s | LumberJord",
   },
   description:
-    "Melbourne-based qualified arborist. Professional tree care including pruning to AS 4373, tree health diagnostics, structural support, removals, and subcontracting across Melbourne and greater Victoria.",
+    "Qualified climbing arborist across Melbourne's bayside and inner east: Brighton, Toorak, Kew, Camberwell and surrounds. Pruning to AS 4373, tree health diagnostics, removals, and subcontracting.",
   keywords: [
     "arborist Melbourne",
+    "arborist Bayside Melbourne",
+    "arborist Brighton",
+    "arborist Toorak",
+    "arborist Kew",
+    "arborist Camberwell",
+    "tree removal Bayside",
+    "tree pruning inner east Melbourne",
     "tree care Melbourne",
-    "arboriculture Melbourne",
     "tree pruning Melbourne",
     "tree removal Melbourne",
     "tree risk assessment Melbourne",
     "arborist subcontracting Melbourne",
     "tree health assessment",
     "decay assessment",
-    "tree management Victoria",
+    "heritage tree pruning Melbourne",
     "certified arborist Melbourne",
     "tree lopping Melbourne",
-    "emergency tree removal Melbourne",
     "stump grinding Melbourne",
     "tree cabling Melbourne",
     "AS 4373 pruning",
-    "AQF arborist",
     "qualified arborist Melbourne",
   ],
   authors: [{ name: "LumberJord" }],
@@ -58,9 +62,9 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "LumberJord | Professional Arborist & Tree Care, Melbourne",
+    title: "LumberJord | Arborist for Melbourne's Bayside & Inner East",
     description:
-      "Melbourne-based qualified arborist. Tree health, pruning, structural support, removals, and subcontracting across Melbourne and greater Victoria.",
+      "Qualified climbing arborist across Brighton, Toorak, Kew, Camberwell and Melbourne's south east. Tree health, pruning, structural support, removals, and subcontracting.",
     url: siteUrl,
     siteName: "LumberJord",
     locale: "en_AU",
@@ -76,9 +80,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LumberJord | Professional Arborist, Melbourne",
+    title: "LumberJord | Arborist, Bayside & Inner East Melbourne",
     description:
-      "Melbourne-based qualified arborist. Tree health, pruning, removals, and subcontracting across greater Victoria.",
+      "Qualified climbing arborist. Tree health, pruning, removals, and subcontracting across Melbourne's bayside and inner-eastern suburbs.",
     images: [`${siteUrl}/og-image.jpg`],
   },
   other: {

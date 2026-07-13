@@ -235,7 +235,7 @@ export default function QuoteForm() {
       setStatus("error");
       setErrorMessage(
         err instanceof TypeError
-          ? "Network problem — please check your connection and try again."
+          ? "Network problem. Please check your connection and try again."
           : err instanceof Error
             ? err.message
             : "Something went wrong."
@@ -698,7 +698,7 @@ export default function QuoteForm() {
                       id="quote-upload-hint"
                       className="block text-xs text-white/50 mt-1"
                     >
-                      JPG, PNG or WebP — up to 4MB total
+                      JPG, PNG or WebP, up to 4MB total
                     </span>
                   </button>
 
@@ -712,10 +712,10 @@ export default function QuoteForm() {
                   />
 
                   <p className="mt-2 text-xs text-white/60">
-                    Not sure what species you have? No need to identify it —
+                    Not sure what species you have? No need to identify it:
                     clear photos are all Jordan needs. Curious anyway? See the{" "}
                     <a
-                      href="#trees"
+                      href="/#trees"
                       className="text-orange-light hover:text-orange underline underline-offset-2 transition-colors"
                     >
                       common Melbourne trees

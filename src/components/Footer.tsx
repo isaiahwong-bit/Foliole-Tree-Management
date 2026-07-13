@@ -6,16 +6,29 @@ import Image from "next/image";
 
 const footerLinks = {
   services: [
-    { label: "Pruning", href: "#services" },
-    { label: "Tree Health & Diagnostics", href: "#services" },
-    { label: "Structural Support", href: "#services" },
-    { label: "Tree Removals", href: "#services" },
-    { label: "Subcontracting & Partnership", href: "#services" },
+    { label: "Pruning", href: "/services/tree-pruning" },
+    { label: "Tree Health & Diagnostics", href: "/services/tree-health" },
+    { label: "Structural Support", href: "/services/structural-support" },
+    { label: "Tree Removals", href: "/services/tree-removal" },
+    { label: "Subcontracting & Partnership", href: "/services/subcontracting" },
+  ],
+  areas: [
+    { label: "Brighton", href: "/arborist/brighton" },
+    { label: "Hampton", href: "/arborist/hampton" },
+    { label: "Sandringham", href: "/arborist/sandringham" },
+    { label: "Toorak", href: "/arborist/toorak" },
+    { label: "Malvern", href: "/arborist/malvern" },
+    { label: "Armadale", href: "/arborist/armadale" },
+    { label: "Kew", href: "/arborist/kew" },
+    { label: "Canterbury", href: "/arborist/canterbury" },
+    { label: "Camberwell", href: "/arborist/camberwell" },
+    { label: "Hawthorn", href: "/arborist/hawthorn" },
   ],
   company: [
-    { label: "About Jordan", href: "#about" },
-    { label: "Process", href: "#process" },
-    { label: "Testimonials", href: "#testimonials" },
+    { label: "About Jordan", href: "/#about" },
+    { label: "Process", href: "/#process" },
+    { label: "Testimonials", href: "/#testimonials" },
+    { label: "All Service Areas", href: "/arborist" },
     { label: "Contact", href: "#contact" },
   ],
 };
@@ -30,7 +43,7 @@ export default function Footer() {
       className="bg-navy border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-5">
@@ -43,9 +56,9 @@ export default function Footer() {
               />
             </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-sm">
-              Melbourne-based professional arboriculture by Jordan. Qualified
-              tree care, risk assessment, and subcontracting across Melbourne
-              and greater Victoria.
+              Professional arboriculture by Jordan. Qualified tree care, risk
+              assessment, and subcontracting across Melbourne&apos;s bayside
+              and inner-eastern suburbs.
             </p>
             <a
               href="tel:+61413268827"
@@ -58,7 +71,7 @@ export default function Footer() {
                 500+
               </span>
               <span className="text-white/60 text-sm">
-                trees managed across Melbourne &amp; greater Victoria
+                trees managed across Melbourne
               </span>
             </div>
           </div>
@@ -76,6 +89,25 @@ export default function Footer() {
                     className="text-white/60 text-sm hover:text-orange-light transition-colors duration-200"
                   >
                     {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Areas */}
+          <div>
+            <h3 className="text-white text-sm font-semibold mb-4 tracking-wide uppercase">
+              Areas
+            </h3>
+            <ul className="space-y-3">
+              {footerLinks.areas.map((link, i) => (
+                <li key={i}>
+                  <a
+                    href={link.href}
+                    className="text-white/60 text-sm hover:text-orange-light transition-colors duration-200"
+                  >
+                    Arborist {link.label}
                   </a>
                 </li>
               ))}

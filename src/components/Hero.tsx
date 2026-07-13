@@ -43,9 +43,10 @@ export default function Hero() {
             </h1>
 
             <p className="animate-rise animate-rise-2 mt-6 sm:mt-8 text-base sm:text-lg text-navy/70 leading-relaxed max-w-lg">
-              LumberJord is a climbing arborist servicing Melbourne and greater
-              Victoria with a hands-on approach to arboriculture. Focused on tree
-              health, best-practice end-to-end services, and innovation.
+              LumberJord is a climbing arborist servicing Melbourne&apos;s
+              bayside and inner-eastern suburbs with a hands-on approach to
+              arboriculture. Focused on tree health, best-practice end-to-end
+              services, and innovation.
             </p>
 
             <div className="animate-rise animate-rise-3 mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -80,7 +81,7 @@ export default function Hero() {
             <div className="animate-rise animate-rise-4 mt-8 sm:mt-10 flex flex-wrap gap-x-8 gap-y-3 text-xs sm:text-sm text-navy/70">
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0" />
-                Melbourne Based
+                Bayside &amp; Inner East
               </span>
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0" />

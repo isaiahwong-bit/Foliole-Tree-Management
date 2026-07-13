@@ -69,7 +69,7 @@ export default function TermsPage() {
             <p>
               Content on this site is provided for general information about
               our services and doesn&apos;t constitute arboricultural advice
-              for your specific trees — every tree needs its own assessment.
+              for your specific trees. Every tree needs its own assessment.
               For anything else, get in touch via the{" "}
               <Link
                 href="/#contact"

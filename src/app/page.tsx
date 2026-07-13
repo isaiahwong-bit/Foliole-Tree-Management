@@ -5,6 +5,7 @@ import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import About from "@/components/About";
 import Trees from "@/components/Trees";
+import Faq from "@/components/Faq";
 import FinalCTA from "@/components/FinalCTA";
 import Guarantee from "@/components/Guarantee";
 import QuoteForm from "@/components/QuoteForm";
@@ -27,6 +28,7 @@ export default function Home() {
         <FinalCTA />
         <Guarantee />
         <Trees />
+        <Faq />
         <QuoteForm />
       </main>
       <Footer />

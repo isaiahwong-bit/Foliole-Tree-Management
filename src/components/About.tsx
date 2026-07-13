@@ -15,7 +15,7 @@ const credentials = [
   {
     icon: Award,
     title: "Certified Arborist",
-    detail: "Qualified arborist with hands-on climbing and diagnostic experience across Melbourne and greater Victoria",
+    detail: "Qualified arborist with hands-on climbing and diagnostic experience across Melbourne's bayside and inner-eastern suburbs",
   },
   {
     icon: BookOpen,
@@ -107,10 +107,11 @@ export default function About() {
             <p className="mt-6 text-lg text-navy/70 leading-relaxed">
               When you hire LumberJord, you&apos;re hiring Jordan. Not a sales team,
               not a call centre, not a rotating roster. With years of
-              professional arboriculture experience across Melbourne and greater
-              Victoria, Jordan is the one who assesses your trees, plans the
-              work, and gets it done at height with the care of a qualified
-              tradesman.
+              professional arboriculture experience across Melbourne&apos;s south
+              east, from Brighton and Hampton on the bay to Kew and Camberwell
+              in the inner east, Jordan is the one who assesses your trees,
+              plans the work, and gets it done at height with the care of a
+              qualified tradesman.
             </p>
             <p className="mt-4 text-navy/65 leading-relaxed">
               Disciplined safety protocols, genuine trade knowledge, and

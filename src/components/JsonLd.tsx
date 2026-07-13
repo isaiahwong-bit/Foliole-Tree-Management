@@ -1,3 +1,5 @@
+import { suburbs } from "@/lib/suburbs";
+
 export default function JsonLd() {
   const structuredData = {
     "@context": "https://schema.org",
@@ -5,7 +7,7 @@ export default function JsonLd() {
     "@id": "https://lumberjord.com.au/#business",
     name: "LumberJord",
     description:
-      "Melbourne-based qualified arborist. Professional tree care including pruning to AS 4373, tree health diagnostics, structural support, removals, and subcontracting across Melbourne and greater Victoria.",
+      "Qualified climbing arborist servicing Melbourne's bayside and inner-eastern suburbs. Professional tree care including pruning to AS 4373, tree health diagnostics, structural support, removals, and subcontracting.",
     url: "https://lumberjord.com.au",
     image: "https://lumberjord.com.au/og-image.jpg",
     telephone: "+61413268827",
@@ -22,13 +24,13 @@ export default function JsonLd() {
       longitude: 144.9631,
     },
     areaServed: [
+      ...suburbs.map((s) => ({
+        "@type": "Place",
+        name: `${s.name}, Victoria, Australia`,
+      })),
       {
         "@type": "City",
         name: "Melbourne",
-      },
-      {
-        "@type": "State",
-        name: "Victoria",
       },
     ],
     founder: {
@@ -42,6 +44,7 @@ export default function JsonLd() {
       "Tree risk assessment",
       "Tree health diagnostics",
       "Tree removal",
+      "Heritage tree preservation",
       "Arborist subcontracting",
       "AS 4373 Australian Pruning Standards",
     ],

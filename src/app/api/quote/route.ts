@@ -230,7 +230,7 @@ ${imageNames.length > 0 ? `PHOTOS ATTACHED (${imageNames.length})\n────�
           "LumberJord Website <onboarding@resend.dev>",
         to: toEmail,
         replyTo: email,
-        subject: `Quote request — ${name} — ${serviceType}`,
+        subject: `Quote request: ${name} - ${serviceType}`,
         text: emailBody,
         attachments,
       });
@@ -245,7 +245,7 @@ ${imageNames.length > 0 ? `PHOTOS ATTACHED (${imageNames.length})\n────�
     } else {
       // Dev/preview fallback: no email provider configured.
       console.warn(
-        "RESEND_API_KEY / QUOTE_TO_EMAIL not set — quote request logged only."
+        "RESEND_API_KEY / QUOTE_TO_EMAIL not set - quote request logged only."
       );
       console.log("═══════════════════════════════");
       console.log("  QUOTE REQUEST RECEIVED");
