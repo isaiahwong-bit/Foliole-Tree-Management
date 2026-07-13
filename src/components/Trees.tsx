@@ -85,6 +85,22 @@ export default function Trees() {
         >
           <ElegantCarousel slides={trees} />
         </m.div>
+
+        {/* Link to the full guide */}
+        <m.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          className="mt-10 text-center"
+        >
+          <a
+            href="/trees"
+            className="inline-flex items-center justify-center gap-2 border border-navy/25 text-navy px-7 py-3.5 rounded-full font-medium text-sm sm:text-base hover:bg-navy/5 transition-all duration-300"
+          >
+            Browse the full tree guide
+          </a>
+        </m.div>
       </div>
     </section>
   );

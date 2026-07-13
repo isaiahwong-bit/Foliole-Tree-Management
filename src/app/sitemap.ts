@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { suburbs } from "@/lib/suburbs";
 import { services } from "@/lib/services";
+import { treeGuides } from "@/lib/trees";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://lumberjord.com.au";
@@ -36,6 +37,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    {
+      url: `${baseUrl}/trees`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...treeGuides.map((tree) => ({
+      url: `${baseUrl}/trees/${tree.slug}`,
+      lastModified,
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
     })),
     {
       url: `${baseUrl}/privacy`,

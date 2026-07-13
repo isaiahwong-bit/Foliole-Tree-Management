@@ -231,7 +231,7 @@ export default async function SuburbPage({ params }: PageProps) {
                 <p className="mt-5 text-navy/70 leading-relaxed">
                   Not sure what&apos;s growing at your place? The{" "}
                   <Link
-                    href="/#trees"
+                    href="/trees"
                     className="text-orange-dark hover:text-orange underline underline-offset-2 transition-colors"
                   >
                     tree identification guide

@@ -28,6 +28,7 @@ const footerLinks = {
     { label: "About Jordan", href: "/#about" },
     { label: "Process", href: "/#process" },
     { label: "Testimonials", href: "/#testimonials" },
+    { label: "Tree Guide", href: "/trees" },
     { label: "All Service Areas", href: "/arborist" },
     { label: "Contact", href: "#contact" },
   ],

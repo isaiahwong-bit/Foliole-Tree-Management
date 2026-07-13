@@ -715,7 +715,7 @@ export default function QuoteForm() {
                     Not sure what species you have? No need to identify it:
                     clear photos are all Jordan needs. Curious anyway? See the{" "}
                     <a
-                      href="/#trees"
+                      href="/trees"
                       className="text-orange-light hover:text-orange underline underline-offset-2 transition-colors"
                     >
                       common Melbourne trees
