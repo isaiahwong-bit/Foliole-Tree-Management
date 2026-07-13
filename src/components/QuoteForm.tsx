@@ -133,12 +133,18 @@ export default function QuoteForm() {
     };
   }, [imageUrls]);
 
-  // Move screen-reader/keyboard focus to the confirmation once sent.
-  useEffect(() => {
-    if (status === "success") {
-      successHeadingRef.current?.focus();
-    }
-  }, [status]);
+  // When the confirmation card has finished animating in, move focus to it
+  // (for screen-reader/keyboard users) and bring it into view. This runs on
+  // the card's own mount rather than on status change: with AnimatePresence
+  // mode="wait" the card isn't in the DOM yet when status flips, and the tall
+  // form collapsing to a short card otherwise leaves the viewport at the footer.
+  const handleSuccessShown = () => {
+    successHeadingRef.current?.focus({ preventScroll: true });
+    successHeadingRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
 
   const updateField = <K extends keyof FormData>(
     key: K,
@@ -305,6 +311,7 @@ export default function QuoteForm() {
                 key="success"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
+                onAnimationComplete={handleSuccessShown}
                 className="bg-navy rounded-2xl p-10 lg:p-14 border border-white/10 text-center"
               >
                 <div className="w-16 h-16 rounded-full bg-orange/15 flex items-center justify-center mx-auto mb-6">
