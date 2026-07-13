@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { forwardToKelpie } from "@/lib/kelpie";
 
 /**
  * Quote form API route.
@@ -253,6 +254,24 @@ ${imageNames.length > 0 ? `PHOTOS ATTACHED (${imageNames.length})\n────�
       console.log(emailBody);
       console.log("═══════════════════════════════\n");
     }
+
+    // Kelpie ledger forward: additive and fire-and-forget. Runs only after
+    // the owner notify succeeded (or the dev log ran), never on the 502
+    // path above. Skips silently until KELPIE_WEBHOOK_URL is set; swallows
+    // every failure, so the customer's response never depends on it.
+    await forwardToKelpie({
+      source: "form",
+      name,
+      phone,
+      email,
+      suburb: location,
+      service: serviceType,
+      trees: treeCount,
+      urgency,
+      notes: description,
+      photoCount: images.length,
+      page: request.headers.get("referer") ?? "quote-form",
+    });
 
     return NextResponse.json({
       success: true,

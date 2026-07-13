@@ -42,3 +42,7 @@ next-env.d.ts
 # Raw photo/video source material (geotagged originals live here — never commit)
 Images/
 public/films-draft/
+
+# Kelpie setup kit and generated workflow artifacts (contain client config
+# and a link-signing secret; live in the DA repo, not this one)
+kelpie/
